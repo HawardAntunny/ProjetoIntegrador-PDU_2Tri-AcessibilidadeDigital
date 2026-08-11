@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link rel="stylesheet" href="style.css">
     <title>Projetos Integradores IFAs | Colégio Estadual de Paiçandu</title>
 </head>
 
@@ -81,7 +81,55 @@
 
         </section>
 
+<section class="filtros">
 
+    <input
+        type="text"
+        id="buscar-projeto"
+        placeholder="Pesquisar projeto...">
+
+    <select id="filtro-trimestre">
+
+        <option value="todos">
+            Todos os trimestres
+        </option>
+
+        <option value="1">
+            1º Trimestre
+        </option>
+
+        <option value="2">
+            2º Trimestre
+        </option>
+
+        <option value="3">
+            3º Trimestre
+        </option>
+
+    </select>
+
+
+    <select id="filtro-turma">
+
+        <option value="todos">
+            Todas as turmas
+        </option>
+
+        <option value="1D">
+            1º D
+        </option>
+
+        <option value="2E">
+            2º E
+        </option>
+
+        <option value="2G">
+            2º G
+        </option>
+
+    </select>
+
+</section>
         <!-- ===================================================== -->
         <!-- 1º TRIMESTRE -->
         <!-- ===================================================== -->
@@ -101,54 +149,46 @@
 
             <!-- ================= 2º E ================= -->
 
-            <article>
+            <article
+    class="deficiencia-visual"
+    data-turma="2E"
+    data-trimestre="2">
 
-                <img
-                    src="img/placeholder.jpg"
-                    alt="Registro do projeto desenvolvido pela turma 2º E">
+    <img
+        src="img/2e-deficiencia-visual.jpg"
+        alt="Estudantes do 2º E realizando atividade sobre deficiência visual">
 
-                <div>
+    <div>
 
-                    <h3>2º E</h3>
+        <h3>2º E</h3>
 
-                    <p>
-                        <strong>Trimestre:</strong>
-                        1º Trimestre
-                    </p>
+        <p>
+            <strong>Trimestre:</strong>
+            2º Trimestre
+        </p>
 
-                    <p>
-                        <strong>Projeto:</strong>
-                        A definir
-                    </p>
+        <p>
+            <strong>Tema:</strong>
+            Deficiência Visual e Acessibilidade
+        </p>
 
-                    <p>
-                        <strong>Tema:</strong>
-                        A definir
-                    </p>
+        <p>
+            <strong>Disciplina:</strong>
+            Programação e Robótica
+        </p>
 
-                    <p>
-                        <strong>Disciplina:</strong>
-                        A definir
-                    </p>
+        <button
+            class="btn-curtir"
+            data-projeto="2e-deficiencia-visual">
 
-                    <p>
-                        <strong>Professor:</strong>
-                        Prof. Me. Haward Antunny
-                    </p>
+            👍 Curtir
+            <span>0</span>
 
-                    <p>
-                        <strong>Descrição:</strong>
-                        Espaço destinado à descrição das atividades
-                        desenvolvidas pela turma durante o projeto.
-                    </p>
+        </button>
 
-                    <a href="#">
-                        Ver Projeto
-                    </a>
+    </div>
 
-                </div>
-
-            </article>
+</article>
 
 
             <!-- ================= 2º G ================= -->
@@ -598,6 +638,6 @@
     </footer>
 
 </body>
-
+<script src="script.js"></script>
 </html>
 ```
