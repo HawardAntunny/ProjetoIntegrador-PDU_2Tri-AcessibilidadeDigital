@@ -43,6 +43,8 @@
     /* MEDIDAS */
     --raio-card: 16px;
     --sombra-card: 0 4px 14px rgba(0, 0, 0, 0.10);
+
+    --tema-acessibilidade-mobilidade: #2A9D8F;
 }
 
 
@@ -821,3 +823,7 @@ para informar qual é o projeto.
 
 }
 
+
+article.acessibilidade-mobilidade {
+    --cor-projeto: var(--tema-acessibilidade-mobilidade);
+}
