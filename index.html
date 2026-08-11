@@ -9,8 +9,13 @@
         content="width=device-width, initial-scale=1.0"
     >
 
+    <meta
+        name="description"
+        content="Projetos Integradores desenvolvidos pelos estudantes do Colégio Estadual Paiçandu."
+    >
+
     <title>
-        Projetos Integradores IFAs | Colégio Estadual Paiçandu
+        Projetos Integradores | Colégio Estadual Paiçandu
     </title>
 
     <link rel="stylesheet" href="style.css">
@@ -20,7 +25,7 @@
 <body>
 
     <!-- =====================================================
-         ACESSIBILIDADE
+         ACESSIBILIDADE - PULAR PARA CONTEÚDO
     ====================================================== -->
 
     <a
@@ -35,30 +40,37 @@
          CABEÇALHO
     ====================================================== -->
 
-    <header>
+    <header class="cabecalho-principal">
 
-        <h1>
-            Projetos Integradores IFAs
-        </h1>
+        <div class="cabecalho-conteudo">
 
-        <h2>
-            Colégio Estadual Paiçandu
-        </h2>
+            <h1>
+                Projetos Integradores
+            </h1>
 
-        <p>
-            Espaço destinado à divulgação dos projetos,
-            experiências e produções desenvolvidas pelos
-            estudantes ao longo do ano letivo.
-        </p>
+            <h2>
+                Colégio Estadual Paiçandu
+            </h2>
+
+            <p>
+                Educação, tecnologia, investigação e protagonismo
+                estudantil conectados em projetos que transformam
+                conhecimento em experiências.
+            </p>
+
+        </div>
 
     </header>
 
 
     <!-- =====================================================
-         MENU
+         MENU PRINCIPAL
     ====================================================== -->
 
-    <nav>
+    <nav
+        class="menu-principal"
+        aria-label="Menu principal"
+    >
 
         <a href="#inicio">
             Início
@@ -92,35 +104,83 @@
             ♿ Acessibilidade
         </span>
 
-        <button onclick="aumentarFonte()">
+
+        <button
+            type="button"
+            onclick="aumentarFonte()"
+            aria-label="Aumentar o tamanho da fonte"
+            title="Aumentar fonte"
+        >
             A+
         </button>
 
-        <button onclick="diminuirFonte()">
+
+        <button
+            type="button"
+            onclick="diminuirFonte()"
+            aria-label="Diminuir o tamanho da fonte"
+            title="Diminuir fonte"
+        >
             A-
         </button>
 
-        <button onclick="alternarContraste()">
+
+        <button
+            type="button"
+            onclick="alternarContraste()"
+            aria-label="Ativar ou desativar alto contraste"
+            title="Alto contraste"
+        >
             ◐ Alto contraste
         </button>
 
-        <button onclick="alternarEspacamento()">
+
+        <button
+            type="button"
+            onclick="alternarEspacamento()"
+            aria-label="Alterar espaçamento do texto"
+            title="Espaçamento do texto"
+        >
             ↔ Espaçamento
         </button>
 
-        <button onclick="alternarSemCores()">
+
+        <button
+            type="button"
+            onclick="alternarSemCores()"
+            aria-label="Visualizar página sem cores"
+            title="Visualizar sem cores"
+        >
             ◉ Sem cores
         </button>
 
-        <button onclick="lerPagina()">
+
+        <button
+            type="button"
+            onclick="lerPagina()"
+            aria-label="Ouvir o conteúdo da página"
+            title="Ouvir página"
+        >
             🔊 Ouvir
         </button>
 
-        <button onclick="pararLeitura()">
+
+        <button
+            type="button"
+            onclick="pararLeitura()"
+            aria-label="Parar leitura da página"
+            title="Parar leitura"
+        >
             ⏹ Parar
         </button>
 
-        <button onclick="restaurarAcessibilidade()">
+
+        <button
+            type="button"
+            onclick="restaurarAcessibilidade()"
+            aria-label="Restaurar configurações de acessibilidade"
+            title="Restaurar"
+        >
             ↺ Restaurar
         </button>
 
@@ -138,38 +198,131 @@
              APRESENTAÇÃO
         ================================================== -->
 
-        <section id="inicio">
+        <section
+            id="inicio"
+            class="apresentacao"
+        >
 
-            <h2>
-                Sobre os Projetos Integradores
-            </h2>
+            <div class="apresentacao-conteudo">
 
-            <p>
-                Os Projetos Integradores promovem a articulação
-                entre diferentes componentes curriculares,
-                incentivando investigação, criatividade,
-                tecnologia, inclusão e resolução de problemas.
-            </p>
+                <span class="subtitulo">
+                    Projetos Integradores
+                </span>
 
-            <p>
-                Nesta página estão reunidos os registros
-                dos projetos desenvolvidos pelas diferentes
-                turmas ao longo dos três trimestres.
-            </p>
+                <h2>
+                    Conhecimento que ultrapassa a sala de aula
+                </h2>
+
+                <p>
+                    Este espaço reúne projetos desenvolvidos pelos
+                    estudantes do Colégio Estadual Paiçandu ao longo
+                    do ano letivo.
+                </p>
+
+                <p>
+                    As propostas articulam diferentes componentes
+                    curriculares e promovem investigação, criatividade,
+                    tecnologia, inclusão, resolução de problemas e
+                    participação dos estudantes.
+                </p>
+
+                <p>
+                    Navegue pelos trimestres e conheça as experiências,
+                    produções e projetos desenvolvidos.
+                </p>
+
+            </div>
 
         </section>
 
 
         <!-- =================================================
-             CONTEÚDOS DOS TRIMESTRES
-             CARREGADOS EXTERNAMENTE
+             1º TRIMESTRE
+
+             O conteúdo de trimestre/tri1.html será inserido aqui.
         ================================================== -->
 
-        <div id="conteudo-tri1"></div>
+        <div
+            id="conteudo-tri1"
+            class="conteudo-trimestre"
+        >
 
-        <div id="conteudo-tri2"></div>
+            <div class="carregando">
+                Carregando projetos do 1º trimestre...
+            </div>
 
-        <div id="conteudo-tri3"></div>
+        </div>
+
+
+        <!-- =================================================
+             2º TRIMESTRE
+
+             O conteúdo de trimestre/tri2.html será inserido aqui.
+        ================================================== -->
+
+        <div
+            id="conteudo-tri2"
+            class="conteudo-trimestre"
+        >
+
+            <div class="carregando">
+                Carregando projetos do 2º trimestre...
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             3º TRIMESTRE
+
+             O conteúdo de trimestre/tri3.html será inserido aqui.
+        ================================================== -->
+
+        <div
+            id="conteudo-tri3"
+            class="conteudo-trimestre"
+        >
+
+            <div class="carregando">
+                Carregando projetos do 3º trimestre...
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SOBRE
+        ================================================== -->
+
+        <section class="sobre-site">
+
+            <div>
+
+                <span class="subtitulo">
+                    Nossa escola
+                </span>
+
+                <h2>
+                    Aprender, criar e compartilhar
+                </h2>
+
+                <p>
+                    Mais do que um espaço de divulgação, este site
+                    funciona como um registro das experiências
+                    desenvolvidas pelos estudantes durante os
+                    Projetos Integradores.
+                </p>
+
+                <p>
+                    Fotografias, produções, protótipos, investigações
+                    e resultados dos projetos são organizados neste
+                    ambiente para compartilhar com a comunidade
+                    escolar o conhecimento produzido pelos estudantes.
+                </p>
+
+            </div>
+
+        </section>
 
 
     </main>
@@ -179,26 +332,56 @@
          RODAPÉ
     ====================================================== -->
 
-    <footer>
+    <footer class="rodape-principal">
 
-        <p>
-            <strong>Projetos Integradores IFAs</strong>
-        </p>
+        <div class="rodape-conteudo">
 
-        <p>
-            Colégio Estadual Paiçandu
-        </p>
+            <div>
 
-        <p>
-            Organização: Prof. Me. Haward Antunny
-        </p>
+                <h3>
+                    Projetos Integradores
+                </h3>
 
-        <p>
-            © 2026
-        </p>
+                <p>
+                    Colégio Estadual Paiçandu
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <p>
+                    Organização
+                </p>
+
+                <strong>
+                    Prof. Me. Haward Antunny
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <p>
+                    © 2026
+                </p>
+
+                <p>
+                    Todos os direitos reservados.
+                </p>
+
+            </div>
+
+        </div>
 
     </footer>
 
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
 
     <script src="script.js"></script>
 

@@ -4,12 +4,13 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
 
+    // Primeiro carrega os conteúdos externos dos trimestres
     await carregarTrimestres();
 
+    // Depois ativa os demais recursos
     ativarMenuAutomatico();
     prepararAnimacaoCards();
     prepararBusca();
-    prepararFiltros();
     prepararCurtidas();
     criarBotaoTopo();
 
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function carregarTrimestres() {
 
-    const arquivos = [
+    const trimestres = [
         {
             arquivo: "trimestre/tri1.html",
             destino: "conteudo-tri1"
@@ -37,30 +38,45 @@ async function carregarTrimestres() {
         }
     ];
 
-    for (const item of arquivos) {
+    for (const trimestre of trimestres) {
 
         try {
 
-            const resposta = await fetch(item.arquivo);
+            const resposta = await fetch(trimestre.arquivo);
 
             if (!resposta.ok) {
                 throw new Error(
-                    "Erro ao carregar " + item.arquivo
+                    `Não foi possível carregar ${trimestre.arquivo}`
                 );
             }
 
-            const conteudo = await resposta.text();
+            const html = await resposta.text();
 
-            const destino =
-                document.getElementById(item.destino);
+            const destino = document.getElementById(
+                trimestre.destino
+            );
 
             if (destino) {
-                destino.innerHTML = conteudo;
+                destino.innerHTML = html;
             }
 
         } catch (erro) {
 
             console.error(erro);
+
+            const destino = document.getElementById(
+                trimestre.destino
+            );
+
+            if (destino) {
+
+                destino.innerHTML = `
+                    <p class="erro-carregamento">
+                        Não foi possível carregar os projetos deste trimestre.
+                    </p>
+                `;
+
+            }
 
         }
 
@@ -78,13 +94,13 @@ function ativarMenuAutomatico() {
     const secoes = document.querySelectorAll("section[id]");
     const linksMenu = document.querySelectorAll("nav a");
 
-    window.addEventListener("scroll", () => {
+    function atualizarMenu() {
 
         let secaoAtual = "";
 
         secoes.forEach(secao => {
 
-            const topo = secao.offsetTop - 150;
+            const topo = secao.offsetTop - 180;
             const altura = secao.offsetHeight;
 
             if (
@@ -108,18 +124,26 @@ function ativarMenuAutomatico() {
 
         });
 
-    });
+    }
+
+    window.addEventListener("scroll", atualizarMenu);
+
+    atualizarMenu();
 
 }
 
 
 // =====================================================
-// ANIMAÇÃO DOS CARDS AO APARECEREM NA TELA
+// ANIMAÇÃO DOS CARDS
 // =====================================================
 
 function prepararAnimacaoCards() {
 
     const cards = document.querySelectorAll("article");
+
+    if (!cards.length) {
+        return;
+    }
 
     const observador = new IntersectionObserver(
 
@@ -128,7 +152,13 @@ function prepararAnimacaoCards() {
             entradas.forEach(entrada => {
 
                 if (entrada.isIntersecting) {
+
                     entrada.target.classList.add("visivel");
+
+                    observador.unobserve(
+                        entrada.target
+                    );
+
                 }
 
             });
@@ -142,8 +172,11 @@ function prepararAnimacaoCards() {
     );
 
     cards.forEach(card => {
+
         card.classList.add("animar-card");
+
         observador.observe(card);
+
     });
 
 }
@@ -155,7 +188,9 @@ function prepararAnimacaoCards() {
 
 function prepararBusca() {
 
-    const campoBusca = document.querySelector("#buscar-projeto");
+    const campoBusca = document.querySelector(
+        "#buscar-projeto"
+    );
 
     if (!campoBusca) {
         return;
@@ -167,19 +202,28 @@ function prepararBusca() {
             .toLowerCase()
             .trim();
 
-        const cards = document.querySelectorAll("article");
+        const cards = document.querySelectorAll(
+            "article.card-projeto, article[data-serie]"
+        );
 
         cards.forEach(card => {
 
-            const texto = card.innerText.toLowerCase();
+            const texto = card.innerText
+                .toLowerCase();
 
             if (texto.includes(termo)) {
+
                 card.style.display = "";
+
             } else {
+
                 card.style.display = "none";
+
             }
 
         });
+
+        verificarProjetosVisiveis();
 
     });
 
@@ -187,58 +231,39 @@ function prepararBusca() {
 
 
 // =====================================================
-// FILTRO POR TURMA E TRIMESTRE
+// EXIBIR MENSAGEM QUANDO NÃO HOUVER PROJETOS
 // =====================================================
 
-function prepararFiltros() {
+function verificarProjetosVisiveis() {
 
-    const filtroTurma = document.querySelector("#filtro-turma");
-    const filtroTrimestre = document.querySelector("#filtro-trimestre");
+    const cards = [
+        ...document.querySelectorAll(
+            "article.card-projeto, article[data-serie]"
+        )
+    ];
 
-    if (!filtroTurma && !filtroTrimestre) {
+    if (!cards.length) {
         return;
     }
 
-    const aplicarFiltros = () => {
+    const quantidadeVisivel = cards.filter(card => {
 
-        const turmaSelecionada =
-            filtroTurma ? filtroTurma.value : "todos";
+        return card.style.display !== "none";
 
-        const trimestreSelecionado =
-            filtroTrimestre ? filtroTrimestre.value : "todos";
+    }).length;
 
-        const cards = document.querySelectorAll("article[data-turma]");
+    const mensagem = document.querySelector(
+        "#nenhum-projeto"
+    );
 
-        cards.forEach(card => {
-
-            const turmaCard = card.dataset.turma;
-            const trimestreCard = card.dataset.trimestre;
-
-            const turmaOk =
-                turmaSelecionada === "todos" ||
-                turmaCard === turmaSelecionada;
-
-            const trimestreOk =
-                trimestreSelecionado === "todos" ||
-                trimestreCard === trimestreSelecionado;
-
-            if (turmaOk && trimestreOk) {
-                card.style.display = "";
-            } else {
-                card.style.display = "none";
-            }
-
-        });
-
-    };
-
-    if (filtroTurma) {
-        filtroTurma.addEventListener("change", aplicarFiltros);
+    if (!mensagem) {
+        return;
     }
 
-    if (filtroTrimestre) {
-        filtroTrimestre.addEventListener("change", aplicarFiltros);
-    }
+    mensagem.style.display =
+        quantidadeVisivel === 0
+            ? "block"
+            : "none";
 
 }
 
@@ -249,7 +274,9 @@ function prepararFiltros() {
 
 function prepararCurtidas() {
 
-    const botoes = document.querySelectorAll(".btn-curtir");
+    const botoes = document.querySelectorAll(
+        ".btn-curtir"
+    );
 
     botoes.forEach(botao => {
 
@@ -259,37 +286,50 @@ function prepararCurtidas() {
             return;
         }
 
-        const chave = "curtidas_" + idProjeto;
-        const chaveUsuario = "curtiu_" + idProjeto;
+        const chaveCurtidas =
+            "curtidas_" + idProjeto;
+
+        const chaveUsuario =
+            "curtiu_" + idProjeto;
 
         let curtidas =
-            Number(localStorage.getItem(chave)) || 0;
+            Number(
+                localStorage.getItem(chaveCurtidas)
+            ) || 0;
 
-        const contador = botao.querySelector("span");
+        const contador =
+            botao.querySelector("span");
 
         if (contador) {
             contador.textContent = curtidas;
         }
 
-        if (localStorage.getItem(chaveUsuario) === "sim") {
+        if (
+            localStorage.getItem(chaveUsuario) === "sim"
+        ) {
             botao.classList.add("curtido");
         }
 
         botao.addEventListener("click", () => {
 
             const jaCurtiu =
-                localStorage.getItem(chaveUsuario) === "sim";
+                localStorage.getItem(
+                    chaveUsuario
+                ) === "sim";
 
             if (jaCurtiu) {
 
-                curtidas = Math.max(0, curtidas - 1);
+                curtidas =
+                    Math.max(0, curtidas - 1);
 
                 localStorage.setItem(
                     chaveUsuario,
                     "nao"
                 );
 
-                botao.classList.remove("curtido");
+                botao.classList.remove(
+                    "curtido"
+                );
 
             } else {
 
@@ -300,16 +340,20 @@ function prepararCurtidas() {
                     "sim"
                 );
 
-                botao.classList.add("curtido");
+                botao.classList.add(
+                    "curtido"
+                );
 
             }
 
             localStorage.setItem(
-                chave,
+                chaveCurtidas,
                 curtidas
             );
 
-            contador.textContent = curtidas;
+            if (contador) {
+                contador.textContent = curtidas;
+            }
 
         });
 
@@ -324,20 +368,40 @@ function prepararCurtidas() {
 
 function criarBotaoTopo() {
 
-    const botao = document.createElement("button");
+    // Evita criar duas vezes
+    if (
+        document.querySelector("#voltar-topo")
+    ) {
+        return;
+    }
+
+    const botao =
+        document.createElement("button");
 
     botao.id = "voltar-topo";
+
     botao.innerHTML = "↑";
-    botao.title = "Voltar ao topo";
+
+    botao.title =
+        "Voltar ao topo";
+
+    botao.setAttribute(
+        "aria-label",
+        "Voltar ao topo"
+    );
 
     document.body.appendChild(botao);
 
     window.addEventListener("scroll", () => {
 
         if (window.scrollY > 400) {
+
             botao.classList.add("mostrar");
+
         } else {
+
             botao.classList.remove("mostrar");
+
         }
 
     });
@@ -355,14 +419,22 @@ function criarBotaoTopo() {
 
 
 // =====================================================
-// BOTÃO PARA MOSTRAR/OCULTAR ATIVIDADES DO PROJETO
+// MOSTRAR / OCULTAR ATIVIDADES DO PROJETO
 // =====================================================
 
 function alternarAtividades(botao) {
 
-    const card = botao.closest("article");
+    const card =
+        botao.closest("article");
 
-    const lista = card.querySelector(".lista-atividades");
+    if (!card) {
+        return;
+    }
+
+    const lista =
+        card.querySelector(
+            ".lista-atividades"
+        );
 
     if (!lista) {
         return;
@@ -370,7 +442,9 @@ function alternarAtividades(botao) {
 
     lista.classList.toggle("aberta");
 
-    if (lista.classList.contains("aberta")) {
+    if (
+        lista.classList.contains("aberta")
+    ) {
 
         botao.textContent =
             "Ocultar atividades";
@@ -383,34 +457,6 @@ function alternarAtividades(botao) {
     }
 
 }
-
-
-// =====================================================
-// EXIBIR MENSAGEM QUANDO NÃO HOUVER PROJETOS
-// =====================================================
-
-function verificarProjetosVisiveis() {
-
-    const cards = [...document.querySelectorAll("article[data-turma]")];
-
-    const quantidadeVisivel = cards.filter(card => {
-        return card.style.display !== "none";
-    }).length;
-
-    const mensagem =
-        document.querySelector("#nenhum-projeto");
-
-    if (!mensagem) {
-        return;
-    }
-
-    mensagem.style.display =
-        quantidadeVisivel === 0
-            ? "block"
-            : "none";
-
-}
-
 
 
 // =====================================================
@@ -430,10 +476,14 @@ function aumentarFonte() {
 
         tamanhoFonteAtual += 2;
 
-        document.documentElement.style.setProperty(
-            "--tamanho-fonte",
-            tamanhoFonteAtual + "px"
-        );
+        document.documentElement
+            .style
+            .setProperty(
+                "--tamanho-fonte",
+                tamanhoFonteAtual + "px"
+            );
+
+        salvarPreferenciasAcessibilidade();
 
     }
 
@@ -450,10 +500,14 @@ function diminuirFonte() {
 
         tamanhoFonteAtual -= 2;
 
-        document.documentElement.style.setProperty(
-            "--tamanho-fonte",
-            tamanhoFonteAtual + "px"
-        );
+        document.documentElement
+            .style
+            .setProperty(
+                "--tamanho-fonte",
+                tamanhoFonteAtual + "px"
+            );
+
+        salvarPreferenciasAcessibilidade();
 
     }
 
@@ -466,7 +520,11 @@ function diminuirFonte() {
 
 function alternarContraste() {
 
-    document.body.classList.toggle("alto-contraste");
+    document.body.classList.toggle(
+        "alto-contraste"
+    );
+
+    salvarPreferenciasAcessibilidade();
 
 }
 
@@ -477,7 +535,11 @@ function alternarContraste() {
 
 function alternarEspacamento() {
 
-    document.body.classList.toggle("espacamento-acessivel");
+    document.body.classList.toggle(
+        "espacamento-acessivel"
+    );
+
+    salvarPreferenciasAcessibilidade();
 
 }
 
@@ -488,7 +550,11 @@ function alternarEspacamento() {
 
 function alternarSemCores() {
 
-    document.body.classList.toggle("sem-cores");
+    document.body.classList.toggle(
+        "sem-cores"
+    );
+
+    salvarPreferenciasAcessibilidade();
 
 }
 
@@ -501,21 +567,36 @@ function lerPagina() {
 
     pararLeitura();
 
-    const conteudo = document.querySelector("#conteudo-principal");
+    const conteudo =
+        document.querySelector(
+            "#conteudo-principal"
+        );
 
     if (!conteudo) {
         return;
     }
 
-    const texto = conteudo.innerText;
+    const texto =
+        conteudo.innerText;
 
-    const leitura = new SpeechSynthesisUtterance(texto);
+    if (!texto.trim()) {
+        return;
+    }
+
+    const leitura =
+        new SpeechSynthesisUtterance(
+            texto
+        );
 
     leitura.lang = "pt-BR";
+
     leitura.rate = 0.9;
+
     leitura.pitch = 1;
 
-    window.speechSynthesis.speak(leitura);
+    window.speechSynthesis.speak(
+        leitura
+    );
 
 }
 
@@ -526,7 +607,11 @@ function lerPagina() {
 
 function pararLeitura() {
 
-    window.speechSynthesis.cancel();
+    if ("speechSynthesis" in window) {
+
+        window.speechSynthesis.cancel();
+
+    }
 
 }
 
@@ -545,12 +630,138 @@ function restaurarAcessibilidade() {
 
     tamanhoFonteAtual = 16;
 
-    document.documentElement.style.setProperty(
-        "--tamanho-fonte",
-        "16px"
-    );
+    document.documentElement
+        .style
+        .setProperty(
+            "--tamanho-fonte",
+            "16px"
+        );
 
     pararLeitura();
 
+    localStorage.removeItem(
+        "acessibilidade"
+    );
+
 }
 
+
+// =====================================================
+// SALVAR PREFERÊNCIAS DE ACESSIBILIDADE
+// =====================================================
+
+function salvarPreferenciasAcessibilidade() {
+
+    const preferencias = {
+
+        tamanhoFonte:
+            tamanhoFonteAtual,
+
+        altoContraste:
+            document.body.classList.contains(
+                "alto-contraste"
+            ),
+
+        espacamento:
+            document.body.classList.contains(
+                "espacamento-acessivel"
+            ),
+
+        semCores:
+            document.body.classList.contains(
+                "sem-cores"
+            )
+
+    };
+
+    localStorage.setItem(
+        "acessibilidade",
+        JSON.stringify(preferencias)
+    );
+
+}
+
+
+// =====================================================
+// CARREGAR PREFERÊNCIAS DE ACESSIBILIDADE
+// =====================================================
+
+function carregarPreferenciasAcessibilidade() {
+
+    const dados =
+        localStorage.getItem(
+            "acessibilidade"
+        );
+
+    if (!dados) {
+        return;
+    }
+
+    try {
+
+        const preferencias =
+            JSON.parse(dados);
+
+        if (
+            preferencias.tamanhoFonte
+        ) {
+
+            tamanhoFonteAtual =
+                preferencias.tamanhoFonte;
+
+            document.documentElement
+                .style
+                .setProperty(
+                    "--tamanho-fonte",
+                    tamanhoFonteAtual + "px"
+                );
+
+        }
+
+        if (
+            preferencias.altoContraste
+        ) {
+
+            document.body.classList.add(
+                "alto-contraste"
+            );
+
+        }
+
+        if (
+            preferencias.espacamento
+        ) {
+
+            document.body.classList.add(
+                "espacamento-acessivel"
+            );
+
+        }
+
+        if (
+            preferencias.semCores
+        ) {
+
+            document.body.classList.add(
+                "sem-cores"
+            );
+
+        }
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao carregar preferências de acessibilidade:",
+            erro
+        );
+
+    }
+
+}
+
+
+// =====================================================
+// CARREGAR ACESSIBILIDADE AO INICIAR
+// =====================================================
+
+carregarPreferenciasAcessibilidade();
