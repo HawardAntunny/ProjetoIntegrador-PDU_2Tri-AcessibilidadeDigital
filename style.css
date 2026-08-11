@@ -982,3 +982,153 @@ article.acessibilidade-mobilidade {
     }
 
 }
+
+
+/* =========================================================
+   RODAPÉ COMPACTO
+========================================================= */
+
+.rodape-principal {
+
+    background-color: var(--colegio-primaria);
+
+    color: var(--branco);
+
+    padding: 14px 25px;
+}
+
+
+.rodape-conteudo {
+
+    max-width: var(--largura-conteudo);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+/* INFORMAÇÕES */
+
+.rodape-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+
+.rodape-info strong {
+
+    font-size: 0.95rem;
+}
+
+
+.rodape-info span {
+
+    font-size: 0.8rem;
+
+    opacity: 0.85;
+}
+
+
+/* ORGANIZAÇÃO */
+
+.rodape-organizacao {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+
+.rodape-organizacao span {
+
+    font-size: 0.75rem;
+
+    opacity: 0.8;
+}
+
+
+.rodape-organizacao strong {
+
+    font-size: 0.9rem;
+}
+
+
+/* PARTE DIREITA */
+
+.rodape-final {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 15px;
+}
+
+
+.rodape-final span {
+
+    font-size: 0.8rem;
+
+    opacity: 0.85;
+}
+
+
+/* LOGO */
+
+.logo-rodape {
+
+    width: 55px;
+
+    height: 55px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .rodape-conteudo {
+
+        grid-template-columns:
+            1fr auto;
+
+        gap: 12px;
+    }
+
+
+    .rodape-organizacao {
+
+        display: none;
+    }
+
+
+    .logo-rodape {
+
+        width: 45px;
+
+        height: 45px;
+    }
+
+}
