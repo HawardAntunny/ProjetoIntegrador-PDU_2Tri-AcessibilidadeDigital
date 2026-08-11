@@ -927,3 +927,58 @@ para informar qual é o projeto.
 article.acessibilidade-mobilidade {
     --cor-projeto: var(--tema-acessibilidade-mobilidade);
 }
+
+
+/* =========================================================
+   LOGOS NO CABEÇALHO
+========================================================= */
+
+.topo-institucional {
+    display: grid;
+    grid-template-columns: 120px 1fr 120px;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo-cabecalho {
+    width: 100%;
+    max-width: 110px;
+    height: auto;
+    object-fit: contain;
+}
+
+.titulo-cabecalho {
+    text-align: center;
+}
+
+.titulo-cabecalho h1 {
+    margin: 15px 0 10px 0;
+}
+
+.titulo-cabecalho p {
+    margin: 0 auto;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+    .topo-institucional {
+        grid-template-columns: 70px 1fr 70px;
+        gap: 10px;
+    }
+
+    .logo-cabecalho {
+        max-width: 65px;
+    }
+
+    .titulo-cabecalho h1 {
+        font-size: 1.8rem;
+    }
+
+    .titulo-cabecalho p {
+        font-size: 0.95rem;
+    }
+
+}
