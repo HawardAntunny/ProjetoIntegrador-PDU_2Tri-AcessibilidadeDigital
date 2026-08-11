@@ -2,13 +2,17 @@
 // CONFIGURAÇÕES INICIAIS
 // =====================================================
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-    carregarPreferenciasAcessibilidade();
-    prepararAnimacoes();
-    criarBotaoTopo();
+        carregarPreferenciasAcessibilidade();
+        carregarGaleria();
+        prepararAnimacoes();
+        criarBotaoTopo();
 
-});
+    }
+);
 
 
 // =====================================================
@@ -469,3 +473,71 @@ window.addEventListener(
 
     }
 );
+
+// =====================================================
+// GALERIA AUTOMÁTICA
+// =====================================================
+
+function carregarGaleria() {
+
+    const galeria =
+        document.querySelector(
+            "#galeria-projeto"
+        );
+
+    if (!galeria) {
+        return;
+    }
+
+    const quantidadeImagens = 17;
+
+    for (
+        let i = 1;
+        i <= quantidadeImagens;
+        i++
+    ) {
+
+        const figure =
+            document.createElement(
+                "figure"
+            );
+
+        const img =
+            document.createElement(
+                "img"
+            );
+
+        img.src =
+            `img-2ano-2Tri/img-2ano-2T (${i}).JPEG`;
+
+        img.alt =
+            `Registro ${i} das atividades do projeto sobre deficiência visual e acessibilidade`;
+
+        img.loading =
+            "lazy";
+
+
+        const legenda =
+            document.createElement(
+                "figcaption"
+            );
+
+        legenda.textContent =
+            `Registro ${i} do projeto`;
+
+
+        figure.appendChild(
+            img
+        );
+
+        figure.appendChild(
+            legenda
+        );
+
+        galeria.appendChild(
+            figure
+        );
+
+    }
+
+}
