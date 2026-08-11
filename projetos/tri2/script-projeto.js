@@ -489,7 +489,7 @@ function carregarGaleria() {
         return;
     }
 
-    const quantidadeImagens = 17;
+    const quantidadeImagens = 16;
 
     for (
         let i = 1;
