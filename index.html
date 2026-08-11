@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -10,25 +9,18 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <meta
-        name="description"
-        content="Projetos Integradores dos Itinerários Formativos do Colégio Estadual Paiçandu."
-    >
-
     <title>
         Projetos Integradores IFAs | Colégio Estadual Paiçandu
     </title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 
 <body>
 
-
     <!-- =====================================================
-         PULAR PARA O CONTEÚDO
+         ACESSIBILIDADE
     ====================================================== -->
 
     <a
@@ -43,25 +35,21 @@
          CABEÇALHO
     ====================================================== -->
 
-    <header class="cabecalho-principal">
+    <header>
 
-        <div class="cabecalho-conteudo">
+        <h1>
+            Projetos Integradores IFAs
+        </h1>
 
-            <h1>
-                Projetos Integradores IFAs
-            </h1>
+        <h2>
+            Colégio Estadual Paiçandu
+        </h2>
 
-            <h2>
-                Colégio Estadual Paiçandu
-            </h2>
-
-            <p>
-                Um espaço para compartilhar experiências,
-                investigações, produções e projetos desenvolvidos
-                pelos estudantes dos Itinerários Formativos.
-            </p>
-
-        </div>
+        <p>
+            Espaço destinado à divulgação dos projetos,
+            experiências e produções desenvolvidas pelos
+            estudantes ao longo do ano letivo.
+        </p>
 
     </header>
 
@@ -70,21 +58,21 @@
          MENU
     ====================================================== -->
 
-    <nav aria-label="Menu principal">
+    <nav>
 
-        <a href="index.html">
+        <a href="#inicio">
             Início
         </a>
 
-        <a href="trimestre/tri1.html">
+        <a href="#primeiro-trimestre">
             1º Trimestre
         </a>
 
-        <a href="trimestre/tri2.html">
+        <a href="#segundo-trimestre">
             2º Trimestre
         </a>
 
-        <a href="trimestre/tri3.html">
+        <a href="#terceiro-trimestre">
             3º Trimestre
         </a>
 
@@ -104,75 +92,35 @@
             ♿ Acessibilidade
         </span>
 
-
-        <button
-            type="button"
-            onclick="aumentarFonte()"
-            aria-label="Aumentar tamanho da fonte"
-        >
+        <button onclick="aumentarFonte()">
             A+
         </button>
 
-
-        <button
-            type="button"
-            onclick="diminuirFonte()"
-            aria-label="Diminuir tamanho da fonte"
-        >
+        <button onclick="diminuirFonte()">
             A-
         </button>
 
-
-        <button
-            type="button"
-            onclick="alternarContraste()"
-            aria-label="Ativar ou desativar alto contraste"
-        >
+        <button onclick="alternarContraste()">
             ◐ Alto contraste
         </button>
 
-
-        <button
-            type="button"
-            onclick="alternarEspacamento()"
-            aria-label="Aumentar espaçamento dos textos"
-        >
+        <button onclick="alternarEspacamento()">
             ↔ Espaçamento
         </button>
 
-
-        <button
-            type="button"
-            onclick="alternarSemCores()"
-            aria-label="Visualizar página sem cores"
-        >
+        <button onclick="alternarSemCores()">
             ◉ Sem cores
         </button>
 
-
-        <button
-            type="button"
-            onclick="lerPagina()"
-            aria-label="Ouvir conteúdo da página"
-        >
+        <button onclick="lerPagina()">
             🔊 Ouvir
         </button>
 
-
-        <button
-            type="button"
-            onclick="pararLeitura()"
-            aria-label="Parar leitura"
-        >
+        <button onclick="pararLeitura()">
             ⏹ Parar
         </button>
 
-
-        <button
-            type="button"
-            onclick="restaurarAcessibilidade()"
-            aria-label="Restaurar configurações de acessibilidade"
-        >
+        <button onclick="restaurarAcessibilidade()">
             ↺ Restaurar
         </button>
 
@@ -190,228 +138,38 @@
              APRESENTAÇÃO
         ================================================== -->
 
-        <section class="apresentacao">
+        <section id="inicio">
 
             <h2>
-                Projetos Integradores
+                Sobre os Projetos Integradores
             </h2>
 
             <p>
-                Os Projetos Integradores articulam conhecimentos
-                de diferentes componentes curriculares e aproximam
-                os conteúdos escolares de situações presentes na
-                sociedade.
+                Os Projetos Integradores promovem a articulação
+                entre diferentes componentes curriculares,
+                incentivando investigação, criatividade,
+                tecnologia, inclusão e resolução de problemas.
             </p>
 
             <p>
-                Ao longo do ano letivo, os estudantes participam
-                de experiências envolvendo investigação,
-                criatividade, tecnologia, inclusão, trabalho
-                colaborativo e resolução de problemas.
-            </p>
-
-            <p>
-                Selecione abaixo o trimestre que deseja conhecer.
+                Nesta página estão reunidos os registros
+                dos projetos desenvolvidos pelas diferentes
+                turmas ao longo dos três trimestres.
             </p>
 
         </section>
 
 
         <!-- =================================================
-             TRIMESTRES
+             CONTEÚDOS DOS TRIMESTRES
+             CARREGADOS EXTERNAMENTE
         ================================================== -->
 
-        <section class="secao-trimestres">
+        <div id="conteudo-tri1"></div>
 
-            <header class="titulo-secao">
+        <div id="conteudo-tri2"></div>
 
-                <h2>
-                    Projetos por Trimestre
-                </h2>
-
-                <p>
-                    Conheça as atividades realizadas ao longo
-                    do ano letivo.
-                </p>
-
-            </header>
-
-
-            <div class="grade-trimestres">
-
-
-                <!-- =========================================
-                     1º TRIMESTRE
-                ========================================== -->
-
-                <article
-                    class="card-trimestre trimestre-1"
-                    data-trimestre="1"
-                >
-
-                    <div class="imagem-card">
-
-                        <img
-                            src="img/placeholder.jpg"
-                            alt="Projetos desenvolvidos durante o primeiro trimestre"
-                        >
-
-                    </div>
-
-
-                    <div class="conteudo-card">
-
-                        <span class="etiqueta">
-                            1º Trimestre
-                        </span>
-
-                        <h3>
-                            Projetos do 1º Trimestre
-                        </h3>
-
-                        <p>
-                            Conheça as experiências e produções
-                            desenvolvidas pelas turmas durante
-                            o primeiro trimestre.
-                        </p>
-
-                        <a
-                            href="trimestre/tri1.html"
-                            class="botao-projeto"
-                        >
-                            Ver projetos
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- =========================================
-                     2º TRIMESTRE
-                ========================================== -->
-
-                <article
-                    class="card-trimestre deficiencia-visual"
-                    data-trimestre="2"
-                >
-
-                    <div class="imagem-card">
-
-                        <img
-                            src="img/imagem-capa.png"
-                            alt="Projeto do segundo trimestre sobre tecnologia, inclusão e acessibilidade"
-                        >
-
-                    </div>
-
-
-                    <div class="conteudo-card">
-
-                        <span class="etiqueta">
-                            2º Trimestre
-                        </span>
-
-                        <h3>
-                            Projetos do 2º Trimestre
-                        </h3>
-
-                        <p>
-                            No segundo trimestre, os projetos
-                            envolvem ciência, tecnologia,
-                            acessibilidade, inclusão e diferentes
-                            experiências desenvolvidas pelas
-                            turmas dos 1º e 2º anos.
-                        </p>
-
-                        <a
-                            href="trimestre/tri2.html"
-                            class="botao-projeto"
-                        >
-                            Ver projetos
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- =========================================
-                     3º TRIMESTRE
-                ========================================== -->
-
-                <article
-                    class="card-trimestre trimestre-3"
-                    data-trimestre="3"
-                >
-
-                    <div class="imagem-card">
-
-                        <img
-                            src="img/placeholder.jpg"
-                            alt="Projetos que serão desenvolvidos durante o terceiro trimestre"
-                        >
-
-                    </div>
-
-
-                    <div class="conteudo-card">
-
-                        <span class="etiqueta">
-                            3º Trimestre
-                        </span>
-
-                        <h3>
-                            Projetos do 3º Trimestre
-                        </h3>
-
-                        <p>
-                            Os projetos e registros do terceiro
-                            trimestre serão publicados neste
-                            espaço ao longo do ano.
-                        </p>
-
-                        <a
-                            href="trimestre/tri3.html"
-                            class="botao-projeto"
-                        >
-                            Ver projetos
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             SOBRE O SITE
-        ================================================== -->
-
-        <section class="sobre-site">
-
-            <h2>
-                Educação, tecnologia e protagonismo
-            </h2>
-
-            <p>
-                Este ambiente digital funciona como um registro
-                das experiências realizadas pelos estudantes
-                durante os Projetos Integradores do Colégio
-                Estadual Paiçandu.
-            </p>
-
-            <p>
-                Fotografias, produções, protótipos e relatos
-                serão incorporados às páginas ao longo do
-                desenvolvimento das atividades.
-            </p>
-
-        </section>
+        <div id="conteudo-tri3"></div>
 
 
     </main>
@@ -424,9 +182,7 @@
     <footer>
 
         <p>
-            <strong>
-                Projetos Integradores IFAs
-            </strong>
+            <strong>Projetos Integradores IFAs</strong>
         </p>
 
         <p>
@@ -444,14 +200,8 @@
     </footer>
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
     <script src="script.js"></script>
-
 
 </body>
 
 </html>
-

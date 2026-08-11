@@ -2,7 +2,9 @@
 // CONFIGURAÇÕES INICIAIS
 // =====================================================
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+
+    await carregarTrimestres();
 
     ativarMenuAutomatico();
     prepararAnimacaoCards();
@@ -12,6 +14,59 @@ document.addEventListener("DOMContentLoaded", () => {
     criarBotaoTopo();
 
 });
+
+
+// =====================================================
+// CARREGAR CONTEÚDO DOS TRIMESTRES
+// =====================================================
+
+async function carregarTrimestres() {
+
+    const arquivos = [
+        {
+            arquivo: "trimestre/tri1.html",
+            destino: "conteudo-tri1"
+        },
+        {
+            arquivo: "trimestre/tri2.html",
+            destino: "conteudo-tri2"
+        },
+        {
+            arquivo: "trimestre/tri3.html",
+            destino: "conteudo-tri3"
+        }
+    ];
+
+    for (const item of arquivos) {
+
+        try {
+
+            const resposta = await fetch(item.arquivo);
+
+            if (!resposta.ok) {
+                throw new Error(
+                    "Erro ao carregar " + item.arquivo
+                );
+            }
+
+            const conteudo = await resposta.text();
+
+            const destino =
+                document.getElementById(item.destino);
+
+            if (destino) {
+                destino.innerHTML = conteudo;
+            }
+
+        } catch (erro) {
+
+            console.error(erro);
+
+        }
+
+    }
+
+}
 
 
 // =====================================================
