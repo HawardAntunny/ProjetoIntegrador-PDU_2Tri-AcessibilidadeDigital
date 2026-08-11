@@ -1,657 +1,415 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-    <title>Projetos Integradores IFAs | Colégio Estadual de Paiçandu</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Projetos Integradores dos Itinerários Formativos do Colégio Estadual Paiçandu."
+    >
+
+    <title>
+        Projetos Integradores IFAs | Colégio Estadual Paiçandu
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
+
 <body>
-    <a href="#conteudo-principal" class="pular-conteudo">
-    Pular para o conteúdo principal
-</a>
 
-    <!-- ===================================================== -->
-    <!-- CABEÇALHO DO SITE -->
-    <!-- ===================================================== -->
 
-    <header>
+    <!-- =====================================================
+         PULAR PARA O CONTEÚDO
+    ====================================================== -->
 
-        <h1>Projetos Integradores IFAs</h1>
+    <a
+        href="#conteudo-principal"
+        class="pular-conteudo"
+    >
+        Pular para o conteúdo principal
+    </a>
 
-        <h2>Colégio Estadual de Paiçandu</h2>
 
-        <p>
-            Espaço destinado à divulgação dos projetos desenvolvidos pelos estudantes
-            dos Itinerários Formativos de Aprofundamento – IFAs.
-        </p>
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
 
-        <p>
-            Aqui são apresentados registros das atividades, produções,
-            experiências, protótipos e projetos realizados ao longo do ano letivo.
-        </p>
+    <header class="cabecalho-principal">
+
+        <div class="cabecalho-conteudo">
+
+            <h1>
+                Projetos Integradores IFAs
+            </h1>
+
+            <h2>
+                Colégio Estadual Paiçandu
+            </h2>
+
+            <p>
+                Um espaço para compartilhar experiências,
+                investigações, produções e projetos desenvolvidos
+                pelos estudantes dos Itinerários Formativos.
+            </p>
+
+        </div>
 
     </header>
 
 
-    <!-- ===================================================== -->
-    <!-- MENU -->
-    <!-- ===================================================== -->
+    <!-- =====================================================
+         MENU
+    ====================================================== -->
 
-    <nav>
+    <nav aria-label="Menu principal">
 
-        <a href="#inicio">Início</a>
+        <a href="index.html">
+            Início
+        </a>
 
-        <a href="#primeiro-trimestre">
+        <a href="trimestre/tri1.html">
             1º Trimestre
         </a>
 
-        <a href="#segundo-trimestre">
+        <a href="trimestre/tri2.html">
             2º Trimestre
         </a>
 
-        <a href="#terceiro-trimestre">
+        <a href="trimestre/tri3.html">
             3º Trimestre
         </a>
 
     </nav>
 
 
-<!-- =====================================================
-     BARRA DE ACESSIBILIDADE
-===================================================== -->
+    <!-- =====================================================
+         BARRA DE ACESSIBILIDADE
+    ====================================================== -->
 
-<section class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade">
+    <section
+        class="barra-acessibilidade"
+        aria-label="Ferramentas de acessibilidade"
+    >
 
-    <span class="titulo-acessibilidade">
-        ♿ Recursos de acessibilidade
-    </span>
+        <span class="titulo-acessibilidade">
+            ♿ Acessibilidade
+        </span>
 
-    <button onclick="aumentarFonte()" aria-label="Aumentar tamanho da fonte">
-        A+
-    </button>
 
-    <button onclick="diminuirFonte()" aria-label="Diminuir tamanho da fonte">
-        A-
-    </button>
+        <button
+            type="button"
+            onclick="aumentarFonte()"
+            aria-label="Aumentar tamanho da fonte"
+        >
+            A+
+        </button>
 
-    <button onclick="alternarContraste()" aria-label="Ativar ou desativar alto contraste">
-        ◐ Alto contraste
-    </button>
 
-    <button onclick="alternarEspacamento()" aria-label="Aumentar espaçamento dos textos">
-        ↔ Espaçamento
-    </button>
+        <button
+            type="button"
+            onclick="diminuirFonte()"
+            aria-label="Diminuir tamanho da fonte"
+        >
+            A-
+        </button>
 
-    <button onclick="alternarSemCores()" aria-label="Visualizar página sem depender das cores">
-        ◉ Sem cores
-    </button>
 
-    <button onclick="lerPagina()" aria-label="Ouvir o conteúdo principal da página">
-        🔊 Ouvir página
-    </button>
+        <button
+            type="button"
+            onclick="alternarContraste()"
+            aria-label="Ativar ou desativar alto contraste"
+        >
+            ◐ Alto contraste
+        </button>
 
-    <button onclick="pararLeitura()" aria-label="Parar leitura da página">
-        ⏹ Parar
-    </button>
 
-    <button onclick="restaurarAcessibilidade()" aria-label="Restaurar configurações originais">
-        ↺ Restaurar
-    </button>
+        <button
+            type="button"
+            onclick="alternarEspacamento()"
+            aria-label="Aumentar espaçamento dos textos"
+        >
+            ↔ Espaçamento
+        </button>
 
-</section>
-```
+
+        <button
+            type="button"
+            onclick="alternarSemCores()"
+            aria-label="Visualizar página sem cores"
+        >
+            ◉ Sem cores
+        </button>
+
+
+        <button
+            type="button"
+            onclick="lerPagina()"
+            aria-label="Ouvir conteúdo da página"
+        >
+            🔊 Ouvir
+        </button>
+
+
+        <button
+            type="button"
+            onclick="pararLeitura()"
+            aria-label="Parar leitura"
+        >
+            ⏹ Parar
+        </button>
+
+
+        <button
+            type="button"
+            onclick="restaurarAcessibilidade()"
+            aria-label="Restaurar configurações de acessibilidade"
+        >
+            ↺ Restaurar
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
 
     <main id="conteudo-principal">
 
-        <!-- ===================================================== -->
-        <!-- APRESENTAÇÃO -->
-        <!-- ===================================================== -->
 
-        <section>
+        <!-- =================================================
+             APRESENTAÇÃO
+        ================================================== -->
 
-            <h2>Sobre os Projetos Integradores</h2>
+        <section class="apresentacao">
+
+            <h2>
+                Projetos Integradores
+            </h2>
 
             <p>
-                Os Projetos Integradores dos IFAs possibilitam a articulação
-                entre diferentes componentes curriculares, promovendo investigação,
-                criatividade, tecnologia, resolução de problemas e reflexão sobre
-                temas relevantes para a sociedade.
+                Os Projetos Integradores articulam conhecimentos
+                de diferentes componentes curriculares e aproximam
+                os conteúdos escolares de situações presentes na
+                sociedade.
             </p>
 
             <p>
-                Neste espaço estão organizados os projetos desenvolvidos
-                pelas turmas do 1º e 2º anos do Ensino Médio.
+                Ao longo do ano letivo, os estudantes participam
+                de experiências envolvendo investigação,
+                criatividade, tecnologia, inclusão, trabalho
+                colaborativo e resolução de problemas.
+            </p>
+
+            <p>
+                Selecione abaixo o trimestre que deseja conhecer.
             </p>
 
         </section>
 
-<section class="filtros">
 
-    <input
-        type="text"
-        id="buscar-projeto"
-        placeholder="Pesquisar projeto...">
+        <!-- =================================================
+             TRIMESTRES
+        ================================================== -->
 
-    <select id="filtro-trimestre">
+        <section class="secao-trimestres">
 
-        <option value="todos">
-            Todos os trimestres
-        </option>
+            <header class="titulo-secao">
 
-        <option value="1">
-            1º Trimestre
-        </option>
-
-        <option value="2">
-            2º Trimestre
-        </option>
-
-        <option value="3">
-            3º Trimestre
-        </option>
-
-    </select>
-
-
-    <select id="filtro-turma">
-
-        <option value="todos">
-            Todas as turmas
-        </option>
-
-        <option value="1D">
-            1º D
-        </option>
-
-        <option value="2E">
-            2º E
-        </option>
-
-        <option value="2G">
-            2º G
-        </option>
-
-    </select>
-
-</section>
-        <!-- ===================================================== -->
-        <!-- 1º TRIMESTRE -->
-        <!-- ===================================================== -->
-
-        <section id="primeiro-trimestre">
-
-            <header>
-
-                <h2>1º Trimestre</h2>
+                <h2>
+                    Projetos por Trimestre
+                </h2>
 
                 <p>
-                    Projetos desenvolvidos durante o primeiro trimestre.
+                    Conheça as atividades realizadas ao longo
+                    do ano letivo.
                 </p>
 
             </header>
 
 
-            <!-- ================= 2º E ================= -->
-
-            <article
-    class="deficiencia-visual"
-    data-turma="2E"
-    data-trimestre="2">
-
-   <img
-    src="img/foto1.jpg"
-    alt="Estudantes do 2º E confeccionando óculos simuladores de baixa visão durante o Projeto Integrador">
-
-    <div>
-
-        <h3>2º E</h3>
-
-        <p>
-            <strong>Trimestre:</strong>
-            2º Trimestre
-        </p>
-
-        <p>
-    <strong>♿ Tema:</strong>
-    Deficiência Visual e Acessibilidade
-</p>
-
-        <p>
-            <strong>Disciplina:</strong>
-            Programação e Robótica
-        </p>
-
-        <button
-            class="btn-curtir"
-            data-projeto="2e-deficiencia-visual">
-
-            👍 Curtir
-            <span>0</span>
-
-        </button>
-
-    </div>
-
-</article>
+            <div class="grade-trimestres">
 
 
-            <!-- ================= 2º G ================= -->
+                <!-- =========================================
+                     1º TRIMESTRE
+                ========================================== -->
 
-            <article>
+                <article
+                    class="card-trimestre trimestre-1"
+                    data-trimestre="1"
+                >
 
-                <img
-                    src="img/placeholder.jpg"
-                    alt="Registro do projeto desenvolvido pela turma 2º G">
+                    <div class="imagem-card">
 
-                <div>
+                        <img
+                            src="img/placeholder.jpg"
+                            alt="Projetos desenvolvidos durante o primeiro trimestre"
+                        >
 
-                    <h3>2º G</h3>
-
-                    <p>
-                        <strong>Trimestre:</strong>
-                        1º Trimestre
-                    </p>
-
-                    <p>
-                        <strong>Projeto:</strong>
-                        A definir
-                    </p>
-
-                    <p>
-                        <strong>Tema:</strong>
-                        A definir
-                    </p>
-
-                    <p>
-                        <strong>Disciplina:</strong>
-                        A definir
-                    </p>
-
-                    <p>
-                        <strong>Professor:</strong>
-                        Prof. Me. Haward Antunny
-                    </p>
-
-                    <p>
-                        <strong>Descrição:</strong>
-                        Espaço destinado à descrição das atividades
-                        desenvolvidas pela turma durante o projeto.
-                    </p>
-
-                    <a href="#">
-                        Ver Projeto
-                    </a>
-
-                </div>
-
-            </article>
+                    </div>
 
 
-            <!-- ================= 1º D ================= -->
+                    <div class="conteudo-card">
 
-            <article>
+                        <span class="etiqueta">
+                            1º Trimestre
+                        </span>
 
-                <img
-                    src="img/placeholder.jpg"
-                    alt="Registro do projeto desenvolvido pela turma 1º D">
+                        <h3>
+                            Projetos do 1º Trimestre
+                        </h3>
 
-                <div>
+                        <p>
+                            Conheça as experiências e produções
+                            desenvolvidas pelas turmas durante
+                            o primeiro trimestre.
+                        </p>
 
-                    <h3>1º D</h3>
+                        <a
+                            href="trimestre/tri1.html"
+                            class="botao-projeto"
+                        >
+                            Ver projetos
+                        </a>
 
-                    <p>
-                        <strong>Trimestre:</strong>
-                        1º Trimestre
-                    </p>
+                    </div>
 
-                    <p>
-                        <strong>Projeto:</strong>
-                        A definir
-                    </p>
+                </article>
 
-                    <p>
-                        <strong>Tema:</strong>
-                        A definir
-                    </p>
 
-                    <p>
-                        <strong>Disciplina:</strong>
-                        A definir
-                    </p>
+                <!-- =========================================
+                     2º TRIMESTRE
+                ========================================== -->
 
-                    <p>
-                        <strong>Professor:</strong>
-                        Prof. Me. Haward Antunny
-                    </p>
+                <article
+                    class="card-trimestre deficiencia-visual"
+                    data-trimestre="2"
+                >
 
-                    <p>
-                        <strong>Descrição:</strong>
-                        Espaço destinado à descrição das atividades
-                        desenvolvidas pela turma durante o projeto.
-                    </p>
+                    <div class="imagem-card">
 
-                    <a href="#">
-                        Ver Projeto
-                    </a>
+                        <img
+                            src="img/imagem-capa.png"
+                            alt="Projeto do segundo trimestre sobre tecnologia, inclusão e acessibilidade"
+                        >
 
-                </div>
+                    </div>
 
-            </article>
+
+                    <div class="conteudo-card">
+
+                        <span class="etiqueta">
+                            2º Trimestre
+                        </span>
+
+                        <h3>
+                            Projetos do 2º Trimestre
+                        </h3>
+
+                        <p>
+                            No segundo trimestre, os projetos
+                            envolvem ciência, tecnologia,
+                            acessibilidade, inclusão e diferentes
+                            experiências desenvolvidas pelas
+                            turmas dos 1º e 2º anos.
+                        </p>
+
+                        <a
+                            href="trimestre/tri2.html"
+                            class="botao-projeto"
+                        >
+                            Ver projetos
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================================
+                     3º TRIMESTRE
+                ========================================== -->
+
+                <article
+                    class="card-trimestre trimestre-3"
+                    data-trimestre="3"
+                >
+
+                    <div class="imagem-card">
+
+                        <img
+                            src="img/placeholder.jpg"
+                            alt="Projetos que serão desenvolvidos durante o terceiro trimestre"
+                        >
+
+                    </div>
+
+
+                    <div class="conteudo-card">
+
+                        <span class="etiqueta">
+                            3º Trimestre
+                        </span>
+
+                        <h3>
+                            Projetos do 3º Trimestre
+                        </h3>
+
+                        <p>
+                            Os projetos e registros do terceiro
+                            trimestre serão publicados neste
+                            espaço ao longo do ano.
+                        </p>
+
+                        <a
+                            href="trimestre/tri3.html"
+                            class="botao-projeto"
+                        >
+                            Ver projetos
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
 
         </section>
 
 
-        <!-- ===================================================== -->
-        <!-- 2º TRIMESTRE -->
-        <!-- ===================================================== -->
-
-        <section id="segundo-trimestre">
-
-            <header>
-
-                <h2>2º Trimestre</h2>
-
-                <p>
-                    Projetos desenvolvidos durante o segundo trimestre.
-                </p>
-
-            </header>
-
-
-            <!-- ================================================= -->
-            <!-- 2º E -->
-            <!-- ================================================= -->
-
-            <article>
-
-                <img
-                    src="img/2e-deficiencia-visual.jpg"
-                    alt="Estudantes do 2º E participando do projeto sobre deficiência visual">
-
-                <div>
-
-                    <h3>2º E</h3>
-
-                    <p>
-                        <strong>Trimestre:</strong>
-                        2º Trimestre
-                    </p>
-
-                    <p>
-                        <strong>Projeto:</strong>
-                        Inteligência Artificial, Tecnologia e Acessibilidade
-                    </p>
-
-                    <p>
-                        <strong>Tema:</strong>
-                        Deficiência Visual e Acessibilidade
-                    </p>
-
-                    <p>
-                        <strong>Turma:</strong>
-                        2º E
-                    </p>
-
-                    <p>
-                        <strong>Disciplina:</strong>
-                        Programação / Robótica
-                    </p>
-
-                    <p>
-                        <strong>Professor:</strong>
-                        Prof. Me. Haward Antunny
-                    </p>
-
-                    <p>
-                        <strong>Descrição:</strong>
-                        O projeto propõe reflexões sobre deficiência visual,
-                        acessibilidade digital e tecnologias assistivas.
-                        Durante as atividades, os estudantes vivenciam situações
-                        relacionadas às dificuldades enfrentadas por pessoas cegas
-                        ou com baixa visão e analisam como a tecnologia pode
-                        contribuir para a inclusão e para a autonomia.
-                    </p>
-
-                    <h4>Atividades desenvolvidas</h4>
-
-                    <ul>
-
-                        <li>
-                            Introdução à deficiência visual e à acessibilidade.
-                        </li>
-
-                        <li>
-                            Experiência de navegação em páginas da internet
-                            sem o auxílio da visão.
-                        </li>
-
-                        <li>
-                            Construção de óculos simuladores de diferentes
-                            condições visuais.
-                        </li>
-
-                        <li>
-                            Discussão sobre acessibilidade digital.
-                        </li>
-
-                        <li>
-                            Desenvolvimento de propostas de tecnologias
-                            assistivas.
-                        </li>
-
-                    </ul>
-
-                    <a href="projetos/2e-2trimestre.html">
-                        Ver Projeto Completo
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- ================================================= -->
-            <!-- 2º G -->
-            <!-- ================================================= -->
-
-            <article>
-
-                <img
-                    src="img/2g-deficiencia-visual.jpg"
-                    alt="Estudantes do 2º G participando do projeto sobre deficiência visual">
-
-                <div>
-
-                    <h3>2º G</h3>
-
-                    <p>
-                        <strong>Trimestre:</strong>
-                        2º Trimestre
-                    </p>
-
-                    <p>
-                        <strong>Projeto:</strong>
-                        Inteligência Artificial, Tecnologia e Acessibilidade
-                    </p>
-
-                    <p>
-                        <strong>Tema:</strong>
-                        Deficiência Visual e Acessibilidade
-                    </p>
-
-                    <p>
-                        <strong>Turma:</strong>
-                        2º G
-                    </p>
-
-                    <p>
-                        <strong>Disciplina:</strong>
-                        Programação / Robótica
-                    </p>
-
-                    <p>
-                        <strong>Professor:</strong>
-                        Prof. Me. Haward Antunny
-                    </p>
-
-                    <p>
-                        <strong>Descrição:</strong>
-                        O projeto propõe reflexões sobre deficiência visual,
-                        acessibilidade digital e tecnologias assistivas.
-                        Durante as atividades, os estudantes vivenciam situações
-                        relacionadas às dificuldades enfrentadas por pessoas cegas
-                        ou com baixa visão e analisam como a tecnologia pode
-                        contribuir para a inclusão e para a autonomia.
-                    </p>
-
-                    <h4>Atividades desenvolvidas</h4>
-
-                    <ul>
-
-                        <li>
-                            Introdução à deficiência visual e à acessibilidade.
-                        </li>
-
-                        <li>
-                            Experiência de navegação em páginas da internet
-                            sem o auxílio da visão.
-                        </li>
-
-                        <li>
-                            Construção de óculos simuladores de diferentes
-                            condições visuais.
-                        </li>
-
-                        <li>
-                            Discussão sobre acessibilidade digital.
-                        </li>
-
-                        <li>
-                            Desenvolvimento de propostas de tecnologias
-                            assistivas.
-                        </li>
-
-                    </ul>
-
-                    <a href="projetos/2g-2trimestre.html">
-                        Ver Projeto Completo
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- ================================================= -->
-            <!-- 1º D -->
-            <!-- ================================================= -->
-
-            <article>
-
-                <img
-                    src="img/1d-projeto.jpg"
-                    alt="Estudantes do 1º D participando do Projeto Integrador">
-
-                <div>
-
-                    <h3>1º D</h3>
-
-                    <p>
-                        <strong>Trimestre:</strong>
-                        2º Trimestre
-                    </p>
-
-                    <p>
-                        <strong>Projeto:</strong>
-                        A definir
-                    </p>
-
-                    <p>
-                        <strong>Tema:</strong>
-                        A definir
-                    </p>
-
-                    <p>
-                        <strong>Turma:</strong>
-                        1º D
-                    </p>
-
-                    <p>
-                        <strong>Disciplina:</strong>
-                        A definir
-                    </p>
-
-                    <p>
-                        <strong>Professor:</strong>
-                        Prof. Me. Haward Antunny
-                    </p>
-
-                    <p>
-                        <strong>Descrição:</strong>
-                        Este espaço será destinado à apresentação
-                        do projeto desenvolvido pela turma 1º D.
-                    </p>
-
-                    <h4>Atividades desenvolvidas</h4>
-
-                    <ul>
-
-                        <li>
-                            Atividade 1 – A definir.
-                        </li>
-
-                        <li>
-                            Atividade 2 – A definir.
-                        </li>
-
-                        <li>
-                            Atividade 3 – A definir.
-                        </li>
-
-                    </ul>
-
-                    <a href="projetos/1d-2trimestre.html">
-                        Ver Projeto Completo
-                    </a>
-
-                </div>
-
-            </article>
-
-        </section>
-
-
-        <!-- ===================================================== -->
-        <!-- 3º TRIMESTRE -->
-        <!-- ===================================================== -->
-
-        <section id="terceiro-trimestre">
-
-            <header>
-
-                <h2>3º Trimestre</h2>
-
-                <p>
-                    Projetos desenvolvidos durante o terceiro trimestre.
-                </p>
-
-            </header>
-
-
-            <article>
-
-                <h3>Projetos em desenvolvimento</h3>
-
-                <p>
-                    Os registros dos projetos do 3º trimestre
-                    serão publicados neste espaço.
-                </p>
-
-            </article>
+        <!-- =================================================
+             SOBRE O SITE
+        ================================================== -->
+
+        <section class="sobre-site">
+
+            <h2>
+                Educação, tecnologia e protagonismo
+            </h2>
+
+            <p>
+                Este ambiente digital funciona como um registro
+                das experiências realizadas pelos estudantes
+                durante os Projetos Integradores do Colégio
+                Estadual Paiçandu.
+            </p>
+
+            <p>
+                Fotografias, produções, protótipos e relatos
+                serão incorporados às páginas ao longo do
+                desenvolvimento das atividades.
+            </p>
 
         </section>
 
@@ -659,20 +417,20 @@
     </main>
 
 
-    <!-- ===================================================== -->
-    <!-- RODAPÉ -->
-    <!-- ===================================================== -->
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
 
     <footer>
 
-        <hr>
-
         <p>
-            Projetos Integradores IFAs
+            <strong>
+                Projetos Integradores IFAs
+            </strong>
         </p>
 
         <p>
-            Colégio Estadual de Paiçandu
+            Colégio Estadual Paiçandu
         </p>
 
         <p>
@@ -685,7 +443,15 @@
 
     </footer>
 
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+
 </body>
-<script src="script.js"></script>
+
 </html>
-```
+
