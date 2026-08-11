@@ -1,0 +1,417 @@
+/* =========================================================
+   VARIÁVEIS GERAIS DO SITE
+========================================================= */
+
+:root {
+
+    /* CORES PRINCIPAIS DO COLÉGIO
+       Substitua depois pelos tons oficiais, se desejar */
+    --colegio-primaria: #173f5f;
+    --colegio-secundaria: #20639b;
+    --colegio-destaque: #f6c85f;
+
+    /* CORES NEUTRAS */
+    --branco: #ffffff;
+    --cinza-claro: #f4f6f8;
+    --cinza: #d9dee3;
+    --cinza-escuro: #444444;
+    --preto: #1b1b1b;
+
+    /* TEXTOS */
+    --texto-principal: #252525;
+    --texto-secundario: #5c6670;
+
+    /* FUNDOS */
+    --fundo-site: #f5f7fa;
+    --fundo-card: #ffffff;
+
+    /* CORES DOS PROJETOS */
+    --tema-deficiencia-visual: #6a4c93;
+    --tema-tecnologia: #277da1;
+    --tema-matematica: #2a9d8f;
+    --tema-linguagens: #e76f51;
+    --tema-robotica: #577590;
+    --tema-programacao: #4361ee;
+
+    /* OUTRAS CORES PARA FUTUROS CARDS */
+    --tema-1: #8e44ad;
+    --tema-2: #16a085;
+    --tema-3: #d35400;
+    --tema-4: #c0392b;
+    --tema-5: #2980b9;
+
+    /* MEDIDAS */
+    --raio-card: 16px;
+    --sombra-card: 0 4px 14px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fundo-site);
+    color: var(--texto-principal);
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CABEÇALHO PRINCIPAL
+========================================================= */
+
+body > header {
+    background: linear-gradient(
+        135deg,
+        var(--colegio-primaria),
+        var(--colegio-secundaria)
+    );
+
+    color: var(--branco);
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+
+body > header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 8px;
+}
+
+
+body > header h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+
+body > header p {
+    max-width: 850px;
+    margin: 8px auto;
+    font-size: 1.05rem;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+nav {
+    background-color: var(--colegio-primaria);
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    padding: 12px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+nav a {
+    color: var(--branco);
+    text-decoration: none;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+
+nav a:hover {
+    background-color: var(--colegio-destaque);
+    color: var(--preto);
+}
+
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+========================================================= */
+
+main {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 30px 20px;
+}
+
+
+section {
+    margin-bottom: 60px;
+}
+
+
+/* =========================================================
+   CABEÇALHO DOS TRIMESTRES
+========================================================= */
+
+section > header {
+    margin-bottom: 25px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 4px solid var(--colegio-destaque);
+}
+
+
+section > header h2 {
+    color: var(--colegio-primaria);
+
+    font-size: 2rem;
+}
+
+
+section > header p {
+    color: var(--texto-secundario);
+}
+
+
+/* =========================================================
+   CARDS DOS PROJETOS
+========================================================= */
+
+article {
+    --cor-projeto: var(--colegio-secundaria);
+
+    background-color: var(--fundo-card);
+
+    border-radius: var(--raio-card);
+
+    box-shadow: var(--sombra-card);
+
+    overflow: hidden;
+
+    margin-bottom: 30px;
+
+    border-left: 8px solid var(--cor-projeto);
+
+    display: grid;
+
+    grid-template-columns: 330px 1fr;
+
+    transition: transform 0.2s,
+                box-shadow 0.2s;
+}
+
+
+article:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+
+article img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 320px;
+
+    object-fit: cover;
+}
+
+
+article > div {
+    padding: 28px;
+}
+
+
+article h3 {
+    color: var(--cor-projeto);
+
+    font-size: 2rem;
+
+    margin-bottom: 15px;
+}
+
+
+article h4 {
+    color: var(--cor-projeto);
+
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+
+article p {
+    margin-bottom: 9px;
+}
+
+
+article ul {
+    margin: 10px 0 20px 25px;
+}
+
+
+/* =========================================================
+   BOTÃO VER PROJETO
+========================================================= */
+
+article a {
+    display: inline-block;
+
+    background-color: var(--cor-projeto);
+
+    color: var(--branco);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    margin-top: 10px;
+
+    transition: 0.2s;
+}
+
+
+article a:hover {
+    filter: brightness(0.85);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CARDS POR TEMA
+========================================================= */
+
+/*
+Para usar uma cor específica no card,
+adicione uma classe no HTML.
+
+Exemplo:
+
+<article class="deficiencia-visual">
+
+*/
+
+
+article.deficiencia-visual {
+    --cor-projeto: var(--tema-deficiencia-visual);
+}
+
+
+article.programacao {
+    --cor-projeto: var(--tema-programacao);
+}
+
+
+article.robotica {
+    --cor-projeto: var(--tema-robotica);
+}
+
+
+article.matematica {
+    --cor-projeto: var(--tema-matematica);
+}
+
+
+article.linguagens {
+    --cor-projeto: var(--tema-linguagens);
+}
+
+
+article.tecnologia {
+    --cor-projeto: var(--tema-tecnologia);
+}
+
+
+/* =========================================================
+   TAGS / INFORMAÇÕES DO PROJETO
+========================================================= */
+
+article strong {
+    color: var(--cor-projeto);
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+footer {
+    background-color: var(--colegio-primaria);
+
+    color: var(--branco);
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    margin-top: 50px;
+}
+
+
+footer hr {
+    display: none;
+}
+
+
+footer p {
+    margin: 4px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    body > header h1 {
+        font-size: 2rem;
+    }
+
+
+    article {
+        grid-template-columns: 1fr;
+    }
+
+
+    article img {
+        height: 240px;
+        min-height: auto;
+    }
+
+
+    article h3 {
+        font-size: 1.6rem;
+    }
+
+
+    nav {
+        position: static;
+    }
+
+}
