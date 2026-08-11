@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Deficiência Visual e Acessibilidade | Projetos Integradores
+    </title>
+
+    <link rel="stylesheet" href="style-projeto.css">
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         PULAR PARA O CONTEÚDO
+    ====================================================== -->
+
+    <a
+        href="#conteudo-principal"
+        class="pular-conteudo"
+    >
+        Pular para o conteúdo principal
+    </a>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header class="cabecalho-projeto">
+
+        <div class="overlay">
+
+            <span class="tag-projeto">
+                2º Ano • 2º Trimestre
+            </span>
+
+            <h1>
+                Deficiência Visual e Acessibilidade
+            </h1>
+
+            <p>
+                Tecnologia, inclusão e acessibilidade digital
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MENU
+    ====================================================== -->
+
+    <nav class="menu-projeto">
+
+        <a href="../../index.html">
+            ← Voltar ao início
+        </a>
+
+        <a href="#sobre">
+            Sobre
+        </a>
+
+        <a href="#atividades">
+            Atividades
+        </a>
+
+        <a href="#galeria">
+            Galeria
+        </a>
+
+        <a href="#aprendizados">
+            Aprendizados
+        </a>
+
+    </nav>
+
+
+    <!-- =====================================================
+         BARRA DE ACESSIBILIDADE
+    ====================================================== -->
+
+    <section
+        class="barra-acessibilidade"
+        aria-label="Ferramentas de acessibilidade"
+    >
+
+        <span>
+            ♿ Acessibilidade
+        </span>
+
+        <button onclick="aumentarFonte()">
+            A+
+        </button>
+
+        <button onclick="diminuirFonte()">
+            A-
+        </button>
+
+        <button onclick="alternarContraste()">
+            ◐ Alto contraste
+        </button>
+
+        <button onclick="alternarEspacamento()">
+            ↔ Espaçamento
+        </button>
+
+        <button onclick="alternarSemCores()">
+            ◉ Sem cores
+        </button>
+
+        <button onclick="lerPagina()">
+            🔊 Ouvir página
+        </button>
+
+        <button onclick="pararLeitura()">
+            ⏹ Parar
+        </button>
+
+        <button onclick="restaurarAcessibilidade()">
+            ↺ Restaurar
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
+
+    <main id="conteudo-principal">
+
+
+        <!-- =================================================
+             SOBRE O PROJETO
+        ================================================== -->
+
+        <section id="sobre" class="secao-projeto">
+
+            <span class="subtitulo">
+                Sobre o projeto
+            </span>
+
+            <h2>
+                Tecnologia a serviço da inclusão
+            </h2>
+
+            <p>
+                O projeto desenvolvido pelos estudantes dos 2º anos
+                teve como foco a compreensão de diferentes condições
+                visuais e a reflexão sobre como recursos tecnológicos
+                podem contribuir para reduzir barreiras de acesso à
+                informação.
+            </p>
+
+            <p>
+                Durante as atividades, os estudantes participaram de
+                experiências práticas envolvendo deficiência visual,
+                acessibilidade digital, tecnologias assistivas e
+                desenvolvimento de páginas web acessíveis.
+            </p>
+
+
+            <div class="informacoes-projeto">
+
+                <div>
+                    <strong>Série</strong>
+                    <span>2º Ano</span>
+                </div>
+
+                <div>
+                    <strong>Trimestre</strong>
+                    <span>2º Trimestre</span>
+                </div>
+
+                <div>
+                    <strong>Área</strong>
+                    <span>Matemática e Ciências da Natureza</span>
+                </div>
+
+                <div>
+                    <strong>Componentes</strong>
+                    <span>Programação e Robótica</span>
+                </div>
+
+                <div>
+                    <strong>Turmas</strong>
+                    <span>2º E e 2º G</span>
+                </div>
+
+                <div>
+                    <strong>Professor</strong>
+                    <span>Prof. Me. Haward Antunny</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONDIÇÕES VISUAIS TRABALHADAS
+        ================================================== -->
+
+        <section class="secao-projeto destaque">
+
+            <span class="subtitulo">
+                Conhecendo diferentes experiências visuais
+            </span>
+
+            <h2>
+                Condições trabalhadas durante o projeto
+            </h2>
+
+
+            <div class="grade-conceitos">
+
+                <article>
+
+                    <span class="icone">
+                        👁
+                    </span>
+
+                    <h3>
+                        Baixa visão
+                    </h3>
+
+                    <p>
+                        Dificuldade para perceber detalhes,
+                        ler textos pequenos ou visualizar
+                        determinados elementos.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span class="icone">
+                        ◉
+                    </span>
+
+                    <h3>
+                        Catarata
+                    </h3>
+
+                    <p>
+                        Pode provocar sensação de visão
+                        nublada, redução de contraste
+                        e maior sensibilidade à luz.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span class="icone">
+                        🔭
+                    </span>
+
+                    <h3>
+                        Glaucoma
+                    </h3>
+
+                    <p>
+                        Em estágios avançados pode causar
+                        redução do campo visual periférico.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span class="icone">
+                        ⬤
+                    </span>
+
+                    <h3>
+                        Degeneração macular
+                    </h3>
+
+                    <p>
+                        Pode comprometer principalmente
+                        a visão central.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span class="icone">
+                        🎨
+                    </span>
+
+                    <h3>
+                        Daltonismo
+                    </h3>
+
+                    <p>
+                        Alteração na percepção e diferenciação
+                        de determinadas cores.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ATIVIDADES
+        ================================================== -->
+
+        <section id="atividades" class="secao-projeto">
+
+            <span class="subtitulo">
+                O que fizemos
+            </span>
+
+            <h2>
+                Atividades desenvolvidas
+            </h2>
+
+
+            <div class="linha-atividades">
+
+                <article class="card-atividade">
+
+                    <span class="numero">
+                        01
+                    </span>
+
+                    <h3>
+                        Introdução à deficiência visual
+                    </h3>
+
+                    <p>
+                        Discussão sobre diferentes condições
+                        visuais, inclusão e tecnologias assistivas.
+                    </p>
+
+                </article>
+
+
+                <article class="card-atividade">
+
+                    <span class="numero">
+                        02
+                    </span>
+
+                    <h3>
+                        Navegação sem o auxílio da visão
+                    </h3>
+
+                    <p>
+                        Em duplas, os estudantes vivenciaram
+                        dificuldades de navegação em páginas
+                        da internet utilizando vendas.
+                    </p>
+
+                </article>
+
+
+                <article class="card-atividade">
+
+                    <span class="numero">
+                        03
+                    </span>
+
+                    <h3>
+                        Construção dos óculos simuladores
+                    </h3>
+
+                    <p>
+                        Foram construídos modelos didáticos
+                        para simular diferentes barreiras
+                        visuais.
+                    </p>
+
+                </article>
+
+
+                <article class="card-atividade">
+
+                    <span class="numero">
+                        04
+                    </span>
+
+                    <h3>
+                        Teste do site acessível
+                    </h3>
+
+                    <p>
+                        Os estudantes utilizaram os óculos
+                        simuladores para comparar a experiência
+                        de navegação com e sem recursos
+                        de acessibilidade.
+                    </p>
+
+                </article>
+
+
+                <article class="card-atividade">
+
+                    <span class="numero">
+                        05
+                    </span>
+
+                    <h3>
+                        Reflexão e propostas de melhoria
+                    </h3>
+
+                    <p>
+                        A turma analisou recursos como contraste,
+                        tamanho da fonte, leitura em voz alta,
+                        textos alternativos e navegação por teclado.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             GALERIA
+        ================================================== -->
+
+        <section id="galeria" class="secao-projeto">
+
+            <span class="subtitulo">
+                Registros
+            </span>
+
+            <h2>
+                Galeria do projeto
+            </h2>
+
+            <p>
+                Alguns momentos das atividades desenvolvidas
+                pelos estudantes.
+            </p>
+
+
+            <div class="galeria">
+
+                <figure>
+
+                    <img
+                        src="../../img/foto1.jpg"
+                        alt="Estudantes participando de atividade sobre deficiência visual"
+                    >
+
+                    <figcaption>
+                        Experiência prática de acessibilidade.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="../../img/foto2.jpg"
+                        alt="Estudantes confeccionando óculos simuladores"
+                    >
+
+                    <figcaption>
+                        Construção dos óculos simuladores.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="../../img/foto3.jpg"
+                        alt="Estudantes utilizando computadores durante atividade de acessibilidade digital"
+                    >
+
+                    <figcaption>
+                        Teste de recursos de acessibilidade digital.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="../../img/foto4.jpg"
+                        alt="Estudantes discutindo propostas de melhoria para páginas web"
+                    >
+
+                    <figcaption>
+                        Discussão e análise das soluções.
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RECURSOS DE ACESSIBILIDADE
+        ================================================== -->
+
+        <section class="secao-projeto destaque">
+
+            <span class="subtitulo">
+                Programação e inclusão
+            </span>
+
+            <h2>
+                O que torna uma página mais acessível?
+            </h2>
+
+
+            <div class="grade-recursos">
+
+                <div>
+                    <span>🔠</span>
+                    <strong>Fonte ampliada</strong>
+                </div>
+
+                <div>
+                    <span>◐</span>
+                    <strong>Alto contraste</strong>
+                </div>
+
+                <div>
+                    <span>🔊</span>
+                    <strong>Leitura em voz alta</strong>
+                </div>
+
+                <div>
+                    <span>⌨️</span>
+                    <strong>Navegação por teclado</strong>
+                </div>
+
+                <div>
+                    <span>🖼️</span>
+                    <strong>Descrição de imagens</strong>
+                </div>
+
+                <div>
+                    <span>↔</span>
+                    <strong>Espaçamento de texto</strong>
+                </div>
+
+                <div>
+                    <span>🎨</span>
+                    <strong>Informação além das cores</strong>
+                </div>
+
+                <div>
+                    <span>🧭</span>
+                    <strong>Organização simples</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             APRENDIZADOS
+        ================================================== -->
+
+        <section id="aprendizados" class="secao-projeto">
+
+            <span class="subtitulo">
+                Resultado
+            </span>
+
+            <h2>
+                O que aprendemos?
+            </h2>
+
+            <p>
+                A atividade mostrou que criar uma página web
+                não envolve apenas estética ou funcionamento.
+                Também é necessário considerar quem irá
+                utilizar aquele ambiente.
+            </p>
+
+            <p>
+                Recursos simples de programação e design
+                podem reduzir barreiras e permitir que mais
+                pessoas tenham acesso às mesmas informações.
+            </p>
+
+            <blockquote>
+                Tecnologia acessível é tecnologia pensada
+                para diferentes pessoas e diferentes formas
+                de interação.
+            </blockquote>
+
+        </section>
+
+
+        <!-- =================================================
+             VOLTAR
+        ================================================== -->
+
+        <section class="voltar-projetos">
+
+            <a href="../../index.html">
+                ← Voltar para todos os projetos
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+            <strong>
+                Projetos Integradores
+            </strong>
+        </p>
+
+        <p>
+            Colégio Estadual Paiçandu
+        </p>
+
+        <p>
+            Organização: Prof. Me. Haward Antunny
+        </p>
+
+        <p>
+            © 2026
+        </p>
+
+    </footer>
+
+
+    <script src="script-projeto.js"></script>
+
+</body>
+
+</html>

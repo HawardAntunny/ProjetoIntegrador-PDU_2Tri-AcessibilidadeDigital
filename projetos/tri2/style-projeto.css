@@ -1,0 +1,1321 @@
+/* =========================================================
+   PROJETOS INTEGRADORES
+   COLÉGIO ESTADUAL PAIÇANDU
+
+   PÁGINA INDIVIDUAL DO PROJETO
+========================================================= */
+
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+:root {
+
+    /* CORES PRINCIPAIS */
+    --colegio-primaria: #173F5F;
+    --colegio-secundaria: #20639B;
+    --colegio-destaque: #3CAEA3;
+
+    /* PROJETO - DEFICIÊNCIA VISUAL */
+    --projeto-principal: #6A4C93;
+    --projeto-claro: #F2ECF8;
+    --projeto-medio: #9675B8;
+
+    /* NEUTRAS */
+    --branco: #FFFFFF;
+    --preto: #1E1E1E;
+    --cinza-texto: #555555;
+    --cinza-claro: #F4F4F4;
+    --cinza-borda: #DDDDDD;
+
+    /* ACESSIBILIDADE */
+    --foco: #FFBF00;
+
+    /* TAMANHO BASE */
+    --tamanho-fonte: 16px;
+
+    /* LAYOUT */
+    --largura-conteudo: 1200px;
+    --raio: 16px;
+
+    /* SOMBRAS */
+    --sombra:
+        0 6px 20px rgba(0, 0, 0, 0.10);
+
+    --sombra-hover:
+        0 12px 30px rgba(0, 0, 0, 0.16);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: var(--tamanho-fonte);
+
+    line-height: 1.7;
+
+    color: var(--preto);
+
+    background-color: var(--branco);
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE - PULAR PARA O CONTEÚDO
+========================================================= */
+
+.pular-conteudo {
+
+    position: absolute;
+
+    top: -100px;
+    left: 20px;
+
+    z-index: 9999;
+
+    padding: 12px 20px;
+
+    background: var(--preto);
+    color: var(--branco);
+
+    border-radius: 0 0 8px 8px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+.pular-conteudo:focus {
+    top: 0;
+}
+
+
+/* =========================================================
+   FOCO DO TECLADO
+========================================================= */
+
+a:focus-visible,
+button:focus-visible {
+
+    outline: 4px solid var(--foco);
+    outline-offset: 4px;
+
+}
+
+
+/* =========================================================
+   CABEÇALHO DO PROJETO
+========================================================= */
+
+.cabecalho-projeto {
+
+    min-height: 430px;
+
+    display: flex;
+    align-items: flex-end;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(23, 63, 95, 0.35),
+            rgba(44, 24, 65, 0.90)
+        ),
+        url("../../img/imagem-capa.png");
+
+    background-size: cover;
+    background-position: center;
+
+    color: var(--branco);
+}
+
+
+.cabecalho-projeto .overlay {
+
+    width: 100%;
+    max-width: var(--largura-conteudo);
+
+    margin: 0 auto;
+
+    padding: 70px 30px;
+}
+
+
+.cabecalho-projeto h1 {
+
+    max-width: 850px;
+
+    margin:
+        15px 0
+        10px 0;
+
+    font-size: clamp(
+        2.2rem,
+        6vw,
+        4.5rem
+    );
+
+    line-height: 1.05;
+}
+
+
+.cabecalho-projeto p {
+
+    margin: 0;
+
+    max-width: 700px;
+
+    font-size: 1.25rem;
+
+    opacity: 0.95;
+}
+
+
+/* =========================================================
+   TAG DO PROJETO
+========================================================= */
+
+.tag-projeto {
+
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    border: 1px solid
+        rgba(255,255,255,0.6);
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(5px);
+
+    font-size: 0.9rem;
+
+    font-weight: bold;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   MENU DO PROJETO
+========================================================= */
+
+.menu-projeto {
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    padding: 12px 20px;
+
+    background:
+        var(--colegio-primaria);
+
+    box-shadow:
+        0 3px 10px
+        rgba(0,0,0,0.15);
+}
+
+
+.menu-projeto a {
+
+    padding: 9px 15px;
+
+    color: var(--branco);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    transition:
+        background 0.2s,
+        transform 0.2s;
+}
+
+
+.menu-projeto a:hover {
+
+    background:
+        rgba(255,255,255,0.15);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BARRA DE ACESSIBILIDADE
+========================================================= */
+
+.barra-acessibilidade {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    padding: 13px 20px;
+
+    background: var(--cinza-claro);
+
+    border-bottom:
+        1px solid var(--cinza-borda);
+}
+
+
+.barra-acessibilidade > span {
+
+    margin-right: 8px;
+
+    color: var(--colegio-primaria);
+
+    font-weight: bold;
+}
+
+
+.barra-acessibilidade button {
+
+    padding: 8px 12px;
+
+    border:
+        1px solid var(--cinza-borda);
+
+    border-radius: 7px;
+
+    background: var(--branco);
+
+    color: var(--preto);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        background 0.2s;
+}
+
+
+.barra-acessibilidade button:hover {
+
+    background: var(--projeto-claro);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+========================================================= */
+
+main {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+.secao-projeto {
+
+    max-width: var(--largura-conteudo);
+
+    margin: 0 auto;
+
+    padding: 80px 30px;
+}
+
+
+.secao-projeto > h2 {
+
+    margin:
+        5px 0
+        25px 0;
+
+    color: var(--colegio-primaria);
+
+    font-size: clamp(
+        1.8rem,
+        4vw,
+        2.8rem
+    );
+
+    line-height: 1.15;
+}
+
+
+.secao-projeto > p {
+
+    max-width: 900px;
+
+    color: var(--cinza-texto);
+
+    font-size: 1.05rem;
+}
+
+
+.subtitulo {
+
+    color: var(--projeto-principal);
+
+    font-size: 0.9rem;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   SEÇÕES COM FUNDO DESTACADO
+========================================================= */
+
+.secao-projeto.destaque {
+
+    max-width: none;
+
+    padding-left:
+        max(
+            30px,
+            calc(
+                (100% - var(--largura-conteudo))
+                / 2
+            )
+        );
+
+    padding-right:
+        max(
+            30px,
+            calc(
+                (100% - var(--largura-conteudo))
+                / 2
+            )
+        );
+
+    background: var(--projeto-claro);
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DO PROJETO
+========================================================= */
+
+.informacoes-projeto {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 15px;
+
+    margin-top: 40px;
+}
+
+
+.informacoes-projeto div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 20px;
+
+    background: var(--cinza-claro);
+
+    border-left:
+        5px solid
+        var(--projeto-principal);
+
+    border-radius: 10px;
+}
+
+
+.informacoes-projeto strong {
+
+    color: var(--projeto-principal);
+
+    font-size: 0.85rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+}
+
+
+.informacoes-projeto span {
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   CONDIÇÕES VISUAIS
+========================================================= */
+
+.grade-conceitos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(190px, 1fr)
+        );
+
+    gap: 20px;
+
+    margin-top: 35px;
+}
+
+
+.grade-conceitos article {
+
+    padding: 25px;
+
+    background: var(--branco);
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+}
+
+
+.grade-conceitos article:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: var(--sombra-hover);
+}
+
+
+.grade-conceitos .icone {
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: 2.2rem;
+}
+
+
+.grade-conceitos h3 {
+
+    margin:
+        0 0
+        10px 0;
+
+    color: var(--projeto-principal);
+}
+
+
+.grade-conceitos p {
+
+    margin: 0;
+
+    color: var(--cinza-texto);
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   ATIVIDADES - SCROLL HORIZONTAL
+========================================================= */
+
+.linha-atividades {
+
+    display: flex;
+
+    flex-wrap: nowrap;
+
+    gap: 20px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding:
+        15px 5px
+        25px 5px;
+
+    scroll-behavior: smooth;
+
+    scroll-snap-type:
+        x mandatory;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+.card-atividade {
+
+    flex:
+        0 0 310px;
+
+    min-width: 310px;
+
+    padding: 28px;
+
+    background: var(--branco);
+
+    border:
+        1px solid
+        var(--cinza-borda);
+
+    border-top:
+        5px solid
+        var(--projeto-principal);
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+
+    scroll-snap-align: start;
+}
+
+
+.card-atividade .numero {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--projeto-medio);
+
+    font-size: 2rem;
+
+    font-weight: bold;
+}
+
+
+.card-atividade h3 {
+
+    margin:
+        0 0
+        12px 0;
+
+    color: var(--colegio-primaria);
+}
+
+
+.card-atividade p {
+
+    margin: 0;
+
+    color: var(--cinza-texto);
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.linha-atividades::-webkit-scrollbar {
+    height: 9px;
+}
+
+
+.linha-atividades::-webkit-scrollbar-track {
+
+    background: var(--cinza-claro);
+
+    border-radius: 10px;
+}
+
+
+.linha-atividades::-webkit-scrollbar-thumb {
+
+    background: var(--projeto-medio);
+
+    border-radius: 10px;
+}
+
+
+.linha-atividades::-webkit-scrollbar-thumb:hover {
+    background: var(--projeto-principal);
+}
+
+
+/* =========================================================
+   GALERIA
+========================================================= */
+
+.galeria {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 22px;
+
+    margin-top: 35px;
+}
+
+
+.galeria figure {
+
+    margin: 0;
+
+    overflow: hidden;
+
+    background: var(--branco);
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+}
+
+
+.galeria img {
+
+    display: block;
+
+    width: 100%;
+    height: 330px;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.4s;
+}
+
+
+.galeria figure:hover img {
+    transform: scale(1.03);
+}
+
+
+.galeria figcaption {
+
+    padding: 15px 18px;
+
+    color: var(--cinza-texto);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   RECURSOS DE ACESSIBILIDADE
+========================================================= */
+
+.grade-recursos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+
+.grade-recursos div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 150px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background: var(--branco);
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+}
+
+
+.grade-recursos span {
+
+    margin-bottom: 10px;
+
+    font-size: 2rem;
+}
+
+
+.grade-recursos strong {
+    color: var(--colegio-primaria);
+}
+
+
+/* =========================================================
+   CITAÇÃO / DESTAQUE FINAL
+========================================================= */
+
+blockquote {
+
+    max-width: 800px;
+
+    margin:
+        40px 0
+        0 0;
+
+    padding:
+        25px 30px;
+
+    background: var(--projeto-claro);
+
+    border-left:
+        6px solid
+        var(--projeto-principal);
+
+    border-radius:
+        0 12px 12px 0;
+
+    color: var(--colegio-primaria);
+
+    font-size: 1.25rem;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   VOLTAR AOS PROJETOS
+========================================================= */
+
+.voltar-projetos {
+
+    max-width: var(--largura-conteudo);
+
+    margin: 0 auto;
+
+    padding:
+        10px 30px
+        80px 30px;
+}
+
+
+.voltar-projetos a {
+
+    display: inline-block;
+
+    padding: 13px 22px;
+
+    background: var(--colegio-primaria);
+
+    color: var(--branco);
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.2s,
+        background 0.2s;
+}
+
+
+.voltar-projetos a:hover {
+
+    background: var(--projeto-principal);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+footer {
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background: var(--colegio-primaria);
+
+    color: var(--branco);
+}
+
+
+footer p {
+
+    margin: 5px 0;
+}
+
+
+/* =========================================================
+   BOTÃO VOLTAR AO TOPO
+========================================================= */
+
+#voltar-topo {
+
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 1000;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--projeto-principal);
+
+    color: var(--branco);
+
+    font-size: 1.4rem;
+
+    cursor: pointer;
+
+    box-shadow: var(--sombra);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(15px);
+
+    transition:
+        0.25s;
+}
+
+
+#voltar-topo.mostrar {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   ANIMAÇÃO
+========================================================= */
+
+.animar-card {
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity 0.6s,
+        transform 0.6s;
+}
+
+
+.animar-card.visivel {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   ALTO CONTRASTE
+========================================================= */
+
+body.alto-contraste {
+
+    background: #000000;
+
+    color: #FFFFFF;
+}
+
+
+body.alto-contraste
+.secao-projeto,
+
+body.alto-contraste
+.secao-projeto.destaque {
+
+    background: #000000;
+
+    color: #FFFFFF;
+}
+
+
+body.alto-contraste
+.secao-projeto h2,
+
+body.alto-contraste
+.secao-projeto h3,
+
+body.alto-contraste
+.secao-projeto p,
+
+body.alto-contraste
+.subtitulo {
+
+    color: #FFFFFF;
+}
+
+
+body.alto-contraste
+article,
+
+body.alto-contraste
+.informacoes-projeto div,
+
+body.alto-contraste
+.grade-recursos div {
+
+    background: #000000;
+
+    color: #FFFFFF;
+
+    border:
+        2px solid #FFFFFF;
+}
+
+
+body.alto-contraste
+article p,
+
+body.alto-contraste
+article h3,
+
+body.alto-contraste
+.grade-recursos strong {
+
+    color: #FFFFFF;
+}
+
+
+body.alto-contraste
+a {
+
+    color: #FFFF00;
+}
+
+
+body.alto-contraste
+.barra-acessibilidade {
+
+    background: #000000;
+
+    border-color: #FFFFFF;
+}
+
+
+body.alto-contraste
+.barra-acessibilidade span {
+
+    color: #FFFFFF;
+}
+
+
+body.alto-contraste
+.barra-acessibilidade button {
+
+    background: #000000;
+
+    color: #FFFFFF;
+
+    border:
+        2px solid #FFFFFF;
+}
+
+
+body.alto-contraste
+blockquote {
+
+    background: #000000;
+
+    color: #FFFFFF;
+
+    border-color: #FFFF00;
+}
+
+
+/* =========================================================
+   ESPAÇAMENTO ACESSÍVEL
+========================================================= */
+
+body.espacamento-acessivel {
+
+    letter-spacing: 0.08em;
+
+    word-spacing: 0.18em;
+
+    line-height: 2;
+}
+
+
+/* =========================================================
+   MODO SEM CORES
+========================================================= */
+
+body.sem-cores {
+    filter: grayscale(100%);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .informacoes-projeto {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .grade-recursos {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .galeria {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .cabecalho-projeto {
+
+        min-height: 360px;
+
+    }
+
+
+    .cabecalho-projeto .overlay {
+
+        padding:
+            50px 20px;
+
+    }
+
+
+    .menu-projeto {
+
+        justify-content:
+            flex-start;
+
+        overflow-x: auto;
+
+        flex-wrap: nowrap;
+
+    }
+
+
+    .menu-projeto a {
+
+        flex-shrink: 0;
+
+    }
+
+
+    .barra-acessibilidade {
+
+        justify-content:
+            flex-start;
+
+    }
+
+
+    .secao-projeto {
+
+        padding:
+            55px 20px;
+
+    }
+
+
+    .secao-projeto.destaque {
+
+        padding-left: 20px;
+
+        padding-right: 20px;
+
+    }
+
+
+    .informacoes-projeto {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .grade-conceitos {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .grade-recursos {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .galeria {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .galeria img {
+
+        height: 260px;
+
+    }
+
+
+    .card-atividade {
+
+        flex:
+            0 0 85%;
+
+        min-width: 85%;
+
+    }
+
+
+    .voltar-projetos {
+
+        padding:
+            10px 20px
+            60px 20px;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .grade-recursos {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .cabecalho-projeto h1 {
+
+        font-size: 2.1rem;
+
+    }
+
+}
