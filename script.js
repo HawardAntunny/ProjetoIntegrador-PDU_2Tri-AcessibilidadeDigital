@@ -355,3 +355,147 @@ function verificarProjetosVisiveis() {
             : "none";
 
 }
+
+
+
+// =====================================================
+// RECURSOS DE ACESSIBILIDADE
+// =====================================================
+
+let tamanhoFonteAtual = 16;
+
+
+// =====================================================
+// AUMENTAR FONTE
+// =====================================================
+
+function aumentarFonte() {
+
+    if (tamanhoFonteAtual < 26) {
+
+        tamanhoFonteAtual += 2;
+
+        document.documentElement.style.setProperty(
+            "--tamanho-fonte",
+            tamanhoFonteAtual + "px"
+        );
+
+    }
+
+}
+
+
+// =====================================================
+// DIMINUIR FONTE
+// =====================================================
+
+function diminuirFonte() {
+
+    if (tamanhoFonteAtual > 14) {
+
+        tamanhoFonteAtual -= 2;
+
+        document.documentElement.style.setProperty(
+            "--tamanho-fonte",
+            tamanhoFonteAtual + "px"
+        );
+
+    }
+
+}
+
+
+// =====================================================
+// ALTO CONTRASTE
+// =====================================================
+
+function alternarContraste() {
+
+    document.body.classList.toggle("alto-contraste");
+
+}
+
+
+// =====================================================
+// ESPAÇAMENTO
+// =====================================================
+
+function alternarEspacamento() {
+
+    document.body.classList.toggle("espacamento-acessivel");
+
+}
+
+
+// =====================================================
+// MODO SEM CORES
+// =====================================================
+
+function alternarSemCores() {
+
+    document.body.classList.toggle("sem-cores");
+
+}
+
+
+// =====================================================
+// LEITURA EM VOZ ALTA
+// =====================================================
+
+function lerPagina() {
+
+    pararLeitura();
+
+    const conteudo = document.querySelector("#conteudo-principal");
+
+    if (!conteudo) {
+        return;
+    }
+
+    const texto = conteudo.innerText;
+
+    const leitura = new SpeechSynthesisUtterance(texto);
+
+    leitura.lang = "pt-BR";
+    leitura.rate = 0.9;
+    leitura.pitch = 1;
+
+    window.speechSynthesis.speak(leitura);
+
+}
+
+
+// =====================================================
+// PARAR LEITURA
+// =====================================================
+
+function pararLeitura() {
+
+    window.speechSynthesis.cancel();
+
+}
+
+
+// =====================================================
+// RESTAURAR CONFIGURAÇÕES
+// =====================================================
+
+function restaurarAcessibilidade() {
+
+    document.body.classList.remove(
+        "alto-contraste",
+        "espacamento-acessivel",
+        "sem-cores"
+    );
+
+    tamanhoFonteAtual = 16;
+
+    document.documentElement.style.setProperty(
+        "--tamanho-fonte",
+        "16px"
+    );
+
+    pararLeitura();
+
+}
+

@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <a href="#conteudo-principal" class="pular-conteudo">
+    Pular para o conteúdo principal
+</a>
 
     <!-- ===================================================== -->
     <!-- CABEÇALHO DO SITE -->
@@ -57,7 +60,52 @@
     </nav>
 
 
-    <main id="inicio">
+<!-- =====================================================
+     BARRA DE ACESSIBILIDADE
+===================================================== -->
+
+<section class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade">
+
+    <span class="titulo-acessibilidade">
+        ♿ Recursos de acessibilidade
+    </span>
+
+    <button onclick="aumentarFonte()" aria-label="Aumentar tamanho da fonte">
+        A+
+    </button>
+
+    <button onclick="diminuirFonte()" aria-label="Diminuir tamanho da fonte">
+        A-
+    </button>
+
+    <button onclick="alternarContraste()" aria-label="Ativar ou desativar alto contraste">
+        ◐ Alto contraste
+    </button>
+
+    <button onclick="alternarEspacamento()" aria-label="Aumentar espaçamento dos textos">
+        ↔ Espaçamento
+    </button>
+
+    <button onclick="alternarSemCores()" aria-label="Visualizar página sem depender das cores">
+        ◉ Sem cores
+    </button>
+
+    <button onclick="lerPagina()" aria-label="Ouvir o conteúdo principal da página">
+        🔊 Ouvir página
+    </button>
+
+    <button onclick="pararLeitura()" aria-label="Parar leitura da página">
+        ⏹ Parar
+    </button>
+
+    <button onclick="restaurarAcessibilidade()" aria-label="Restaurar configurações originais">
+        ↺ Restaurar
+    </button>
+
+</section>
+```
+
+    <main id="conteudo-principal">
 
         <!-- ===================================================== -->
         <!-- APRESENTAÇÃO -->
@@ -154,9 +202,9 @@
     data-turma="2E"
     data-trimestre="2">
 
-    <img
-        src="img/2e-deficiencia-visual.jpg"
-        alt="Estudantes do 2º E realizando atividade sobre deficiência visual">
+   <img
+    src="img/foto1.jpg"
+    alt="Estudantes do 2º E confeccionando óculos simuladores de baixa visão durante o Projeto Integrador">
 
     <div>
 
@@ -168,9 +216,9 @@
         </p>
 
         <p>
-            <strong>Tema:</strong>
-            Deficiência Visual e Acessibilidade
-        </p>
+    <strong>♿ Tema:</strong>
+    Deficiência Visual e Acessibilidade
+</p>
 
         <p>
             <strong>Disciplina:</strong>

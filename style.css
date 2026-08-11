@@ -570,3 +570,254 @@ nav a.ativo {
     background-color: var(--colegio-secundaria);
 
 }
+
+
+/* =====================================================
+   ACESSIBILIDADE
+===================================================== */
+
+:root {
+    --tamanho-fonte: 16px;
+    --espacamento-texto: normal;
+    --espacamento-linha: 1.6;
+}
+
+
+/* TAMANHO GERAL DA FONTE */
+
+html {
+    font-size: var(--tamanho-fonte);
+}
+
+
+/* =====================================================
+   BARRA DE ACESSIBILIDADE
+===================================================== */
+
+.barra-acessibilidade {
+
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 15px 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+
+    background-color: var(--branco);
+
+    border: 2px solid var(--colegio-primaria);
+    border-radius: 12px;
+
+}
+
+
+.titulo-acessibilidade {
+    font-weight: bold;
+    color: var(--colegio-primaria);
+    margin-right: 10px;
+}
+
+
+.barra-acessibilidade button {
+
+    border: 2px solid var(--colegio-primaria);
+
+    background-color: var(--branco);
+    color: var(--colegio-primaria);
+
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.barra-acessibilidade button:hover {
+
+    background-color: var(--colegio-primaria);
+    color: var(--branco);
+
+}
+
+
+/* =====================================================
+   FOCO VISÍVEL - NAVEGAÇÃO POR TECLADO
+===================================================== */
+
+a:focus,
+button:focus,
+input:focus,
+select:focus {
+
+    outline: 4px solid #ffbf00;
+    outline-offset: 4px;
+
+}
+
+
+/* =====================================================
+   PULAR PARA CONTEÚDO
+===================================================== */
+
+.pular-conteudo {
+
+    position: absolute;
+    left: -9999px;
+    top: 10px;
+
+    background-color: #000000;
+    color: #ffffff;
+
+    padding: 12px 20px;
+
+    z-index: 9999;
+
+}
+
+
+.pular-conteudo:focus {
+
+    left: 10px;
+
+}
+
+
+/* =====================================================
+   ALTO CONTRASTE
+===================================================== */
+
+body.alto-contraste {
+
+    background-color: #000000;
+    color: #ffffff;
+
+}
+
+
+body.alto-contraste main,
+body.alto-contraste section,
+body.alto-contraste article,
+body.alto-contraste article > div {
+
+    background-color: #000000;
+    color: #ffffff;
+
+}
+
+
+body.alto-contraste h1,
+body.alto-contraste h2,
+body.alto-contraste h3,
+body.alto-contraste h4,
+body.alto-contraste strong {
+
+    color: #ffff00;
+
+}
+
+
+body.alto-contraste a {
+
+    color: #00ffff;
+
+}
+
+
+body.alto-contraste article {
+
+    border: 4px solid #ffffff;
+
+}
+
+
+/* =====================================================
+   MAIOR ESPAÇAMENTO
+===================================================== */
+
+body.espacamento-acessivel {
+
+    letter-spacing: 0.08em;
+    word-spacing: 0.15em;
+    line-height: 2;
+
+}
+
+
+body.espacamento-acessivel p {
+
+    margin-bottom: 1.4em;
+
+}
+
+
+/* =====================================================
+   MODO SEM CORES
+===================================================== */
+
+body.sem-cores {
+
+    filter: grayscale(100%);
+
+}
+
+
+/* =====================================================
+   NÃO DEPENDER SOMENTE DAS CORES
+===================================================== */
+
+article h3::before {
+    content: "📚 ";
+}
+
+
+/*
+O tema também deve aparecer escrito.
+Nunca utilize apenas a cor do card
+para informar qual é o projeto.
+*/
+
+
+/* =====================================================
+   MOVIMENTO REDUZIDO
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .barra-acessibilidade {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .barra-acessibilidade button {
+        width: 100%;
+    }
+
+}
+
