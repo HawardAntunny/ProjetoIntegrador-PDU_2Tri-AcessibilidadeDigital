@@ -1173,3 +1173,22 @@ article.acessibilidade-mobilidade {
     }
 
 }
+
+.link-site-pessoal {
+    margin-top: 4px;
+
+    color: var(--branco);
+
+    font-size: 0.78rem;
+
+    text-decoration: none;
+
+    opacity: 0.85;
+
+    transition: 0.2s;
+}
+
+.link-site-pessoal:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
