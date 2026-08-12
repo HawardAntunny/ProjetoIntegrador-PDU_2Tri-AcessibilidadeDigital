@@ -1132,3 +1132,44 @@ article.acessibilidade-mobilidade {
     }
 
 }
+
+.destaques-apresentacao {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 35px 0;
+}
+
+.destaques-apresentacao div {
+    padding: 20px;
+    background-color: var(--branco);
+    border-radius: 12px;
+    box-shadow: var(--sombra-card);
+    border-top: 4px solid var(--colegio-secundaria);
+}
+
+.destaques-apresentacao strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--colegio-primaria);
+    font-size: 1.05rem;
+}
+
+.destaques-apresentacao span {
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+}
+
+.chamada-projetos {
+    margin-top: 25px;
+    font-weight: bold;
+    color: var(--colegio-primaria);
+}
+
+@media (max-width: 700px) {
+
+    .destaques-apresentacao {
+        grid-template-columns: 1fr;
+    }
+
+}
