@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Projeto dos 2º anos sobre acessibilidade, mobilidade e tecnologias assistivas."
+    >
+
+    <title>
+        Acessibilidade e Mobilidade | 2º Ano
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style-projeto.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         PULAR PARA O CONTEÚDO
+    ====================================================== -->
+
+    <a
+        href="#conteudo-principal"
+        class="pular-conteudo"
+    >
+        Pular para o conteúdo principal
+    </a>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header class="cabecalho-projeto">
+
+        <div class="overlay">
+
+            <div class="topo-institucional">
+
+
+                <!-- LOGO DO COLÉGIO -->
+
+                <img
+                    src="../../img/logo-paicandu.png"
+                    alt="Logotipo do Colégio Estadual Paiçandu"
+                    class="logo-cabecalho"
+                >
+
+
+                <!-- TÍTULO -->
+
+                <div class="titulo-cabecalho">
+
+                    <span class="tag-projeto">
+                        2º Ano • 1º Trimestre
+                    </span>
+
+                    <h1>
+                        Tecnologia, Acessibilidade e Mobilidade
+                    </h1>
+
+                    <p>
+                        Recursos assistivos, autonomia, segurança e inclusão
+                    </p>
+
+                </div>
+
+
+                <!-- LOGO DO PARANÁ -->
+
+                <img
+                    src="../../img/logo-parana.png"
+                    alt="Logotipo do Governo do Estado do Paraná"
+                    class="logo-cabecalho"
+                >
+
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MENU
+    ====================================================== -->
+
+    <nav
+        class="menu-projeto"
+        aria-label="Menu da página do projeto"
+    >
+
+        <a href="../../index.html">
+            ← Início
+        </a>
+
+        <a href="#sobre">
+            Sobre
+        </a>
+
+        <a href="#temas">
+            Temas
+        </a>
+
+        <a href="#estudantes">
+            Estudantes
+        </a>
+
+        <a href="#producoes">
+            Cartazes
+        </a>
+
+        <a href="#aprendizados">
+            Aprendizados
+        </a>
+
+    </nav>
+
+
+    <!-- =====================================================
+         BARRA DE ACESSIBILIDADE
+    ====================================================== -->
+
+    <section
+        class="barra-acessibilidade"
+        aria-label="Ferramentas de acessibilidade"
+    >
+
+        <span>
+            ♿ Acessibilidade
+        </span>
+
+
+        <button
+            type="button"
+            onclick="aumentarFonte()"
+        >
+            A+
+        </button>
+
+
+        <button
+            type="button"
+            onclick="diminuirFonte()"
+        >
+            A-
+        </button>
+
+
+        <button
+            type="button"
+            onclick="alternarContraste()"
+        >
+            ◐ Alto contraste
+        </button>
+
+
+        <button
+            type="button"
+            onclick="alternarEspacamento()"
+        >
+            ↔ Espaçamento
+        </button>
+
+
+        <button
+            type="button"
+            onclick="alternarSemCores()"
+        >
+            ◉ Sem cores
+        </button>
+
+
+        <button
+            type="button"
+            onclick="lerPagina()"
+        >
+            🔊 Ouvir página
+        </button>
+
+
+        <button
+            type="button"
+            onclick="pararLeitura()"
+        >
+            ⏹ Parar
+        </button>
+
+
+        <button
+            type="button"
+            onclick="restaurarAcessibilidade()"
+        >
+            ↺ Restaurar
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
+
+    <main id="conteudo-principal">
+
+
+        <!-- =================================================
+             SOBRE O PROJETO
+        ================================================== -->
+
+        <section
+            id="sobre"
+            class="secao-projeto"
+        >
+
+            <span class="subtitulo">
+                Sobre o projeto
+            </span>
+
+            <h2>
+                Tecnologia a serviço da autonomia e da inclusão
+            </h2>
+
+            <p>
+                O projeto desenvolvido pelos estudantes dos 2º anos
+                teve como foco a reflexão sobre acessibilidade,
+                mobilidade e tecnologias assistivas.
+            </p>
+
+            <p>
+                Durante as atividades, os estudantes conheceram
+                diferentes recursos utilizados para ampliar a
+                autonomia, a segurança e a mobilidade de pessoas
+                com deficiência, analisando como a tecnologia pode
+                contribuir para aperfeiçoar esses recursos.
+            </p>
+
+            <p>
+                Entre os elementos estudados estiveram a cadeira de rodas,
+                a bengala e o cinto adaptado, permitindo discutir suas
+                funções, limitações e possibilidades de inovação.
+            </p>
+
+
+            <div class="informacoes-projeto">
+
+                <div>
+
+                    <strong>
+                        Série
+                    </strong>
+
+                    <span>
+                        2º Ano
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Trimestre
+                    </strong>
+
+                    <span>
+                        1º Trimestre
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Área
+                    </strong>
+
+                    <span>
+                        Matemática e Ciências da Natureza
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Componentes
+                    </strong>
+
+                    <span>
+                        Programação e Robótica
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Turmas
+                    </strong>
+
+                    <span>
+                        2º E e 2º G
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Professor
+                    </strong>
+
+                    <span>
+                        Prof. Me. Haward Antunny
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TEMAS TRABALHADOS
+        ================================================== -->
+
+        <section
+            id="temas"
+            class="secao-projeto destaque"
+        >
+
+            <span class="subtitulo">
+                Temas trabalhados
+            </span>
+
+            <h2>
+                Recursos de acessibilidade e mobilidade
+            </h2>
+
+            <p>
+                Os estudantes analisaram diferentes recursos
+                assistivos e refletiram sobre como a tecnologia
+                pode contribuir para melhorar sua utilização.
+            </p>
+
+
+            <div class="grade-conceitos">
+
+
+                <!-- CADEIRA DE RODAS -->
+
+                <article>
+
+                    <span class="icone">
+                        ♿
+                    </span>
+
+                    <h3>
+                        Cadeira de rodas
+                    </h3>
+
+                    <p>
+                        Discussão sobre mobilidade, autonomia e
+                        adaptações capazes de facilitar o deslocamento
+                        de pessoas com deficiência física.
+                    </p>
+
+                </article>
+
+
+                <!-- BENGALA -->
+
+                <article>
+
+                    <span class="icone">
+                        🦯
+                    </span>
+
+                    <h3>
+                        Bengala
+                    </h3>
+
+                    <p>
+                        Estudo da bengala como recurso de orientação
+                        e mobilidade e análise de possibilidades de
+                        utilização de sensores e outros recursos
+                        tecnológicos.
+                    </p>
+
+                </article>
+
+
+                <!-- CINTO -->
+
+                <article>
+
+                    <span class="icone">
+                        🔒
+                    </span>
+
+                    <h3>
+                        Cinto adaptado
+                    </h3>
+
+                    <p>
+                        Reflexão sobre recursos de segurança e
+                        adaptação capazes de oferecer maior proteção,
+                        conforto e autonomia em diferentes situações.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FOTOS DOS ESTUDANTES
+        ================================================== -->
+
+        <section
+            id="estudantes"
+            class="secao-projeto"
+        >
+
+            <span class="subtitulo">
+                O projeto em ação
+            </span>
+
+            <h2>
+                Registros dos estudantes
+            </h2>
+
+            <p>
+                Durante o desenvolvimento do projeto, os estudantes
+                participaram de momentos de discussão, investigação,
+                planejamento e elaboração das produções.
+            </p>
+
+
+            <div
+                id="galeria-estudantes-projeto"
+                class="galeria"
+            >
+
+                <!--
+                    AS IMAGENS SERÃO INSERIDAS
+                    AUTOMATICAMENTE PELO JAVASCRIPT
+                -->
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PRODUÇÕES DOS ESTUDANTES
+        ================================================== -->
+
+        <section
+            id="producoes"
+            class="secao-projeto destaque"
+        >
+
+            <span class="subtitulo">
+                Produções dos estudantes
+            </span>
+
+            <h2>
+                Cartazes produzidos durante o projeto
+            </h2>
+
+            <p>
+                Como síntese das discussões realizadas durante as aulas,
+                os estudantes produziram cartazes apresentando informações,
+                propostas e reflexões relacionadas à acessibilidade,
+                mobilidade e tecnologias assistivas.
+            </p>
+
+            <p>
+                As produções permitiram organizar e comunicar os
+                conhecimentos construídos ao longo das atividades,
+                transformando as pesquisas realizadas em materiais
+                de conscientização e divulgação.
+            </p>
+
+
+            <div
+                id="galeria-cartazes"
+                class="galeria-cartazes"
+            >
+
+                <!--
+                    AS IMAGENS DOS CARTAZES
+                    SERÃO INSERIDAS PELO JAVASCRIPT
+                -->
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TECNOLOGIA ASSISTIVA
+        ================================================== -->
+
+        <section class="secao-projeto">
+
+            <span class="subtitulo">
+                Tecnologia assistiva
+            </span>
+
+            <h2>
+                Como a tecnologia pode ampliar possibilidades?
+            </h2>
+
+            <p>
+                Durante o projeto, os estudantes foram incentivados
+                a pensar em possibilidades de adaptação e melhoria dos
+                recursos estudados.
+            </p>
+
+            <p>
+                Sensores, sistemas de alerta, automação, recursos
+                eletrônicos e diferentes formas de adaptação podem
+                transformar objetos já existentes e ampliar sua
+                funcionalidade para diferentes usuários.
+            </p>
+
+
+            <blockquote>
+                Pensar acessibilidade é reconhecer diferentes
+                necessidades e buscar soluções capazes de ampliar
+                autonomia, segurança e participação.
+            </blockquote>
+
+        </section>
+
+
+        <!-- =================================================
+             APRENDIZADOS
+        ================================================== -->
+
+        <section
+            id="aprendizados"
+            class="secao-projeto destaque"
+        >
+
+            <span class="subtitulo">
+                Resultado do projeto
+            </span>
+
+            <h2>
+                Tecnologia também é pensar em inclusão
+            </h2>
+
+            <p>
+                O projeto possibilitou aos estudantes compreender
+                que tecnologia não se limita ao uso de computadores,
+                programação ou equipamentos eletrônicos.
+            </p>
+
+            <p>
+                Ela também está presente na criação, adaptação e
+                aperfeiçoamento de soluções capazes de reduzir
+                barreiras e ampliar a autonomia das pessoas.
+            </p>
+
+            <p>
+                A produção dos cartazes permitiu sistematizar os
+                conhecimentos construídos durante as aulas e
+                compartilhar informações relacionadas à acessibilidade,
+                mobilidade e inclusão.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             VOLTAR
+        ================================================== -->
+
+        <section class="voltar-projetos">
+
+            <a href="../../index.html">
+                ← Voltar para todos os projetos
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+
+    <footer class="rodape-principal">
+
+        <div class="rodape-conteudo">
+
+
+            <div class="rodape-info">
+
+                <strong>
+                    Projetos Integradores
+                </strong>
+
+                <span>
+                    Colégio Estadual Paiçandu
+                </span>
+
+            </div>
+
+
+            <div class="rodape-organizacao">
+
+                <span>
+                    Organização
+                </span>
+
+                <strong>
+                    Prof. Me. Haward Antunny
+                </strong>
+
+            </div>
+
+
+            <div class="rodape-final">
+
+                <span>
+                    © 2026
+                </span>
+
+                <img
+                    src="../../img/logo-haw.png"
+                    alt="Logotipo do professor Haward Antunny"
+                    class="logo-rodape"
+                >
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script-projeto.js"></script>
+
+
+</body>
+
+</html>

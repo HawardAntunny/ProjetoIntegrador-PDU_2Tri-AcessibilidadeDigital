@@ -1,0 +1,1314 @@
+/* =========================================================
+   PROJETO - 2º ANO - 1º TRIMESTRE
+   ACESSIBILIDADE, MOBILIDADE E TECNOLOGIAS ASSISTIVAS
+========================================================= */
+
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+:root {
+
+    /* CORES INSTITUCIONAIS */
+    --colegio-primaria: #173F5F;
+    --colegio-secundaria: #20639B;
+
+    /* CORES DO PROJETO */
+    --projeto-principal: #2A9D8F;
+    --projeto-secundaria: #3CAEA3;
+    --projeto-claro: #EAF7F5;
+    --projeto-escuro: #1F6F67;
+
+    /* NEUTRAS */
+    --branco: #FFFFFF;
+    --preto: #1D1D1D;
+    --cinza-texto: #555555;
+    --cinza-claro: #F4F6F7;
+    --cinza-borda: #D9E0E3;
+
+    /* ACESSIBILIDADE */
+    --foco: #FFBF00;
+
+    /* TAMANHO */
+    --tamanho-fonte: 16px;
+
+    /* LAYOUT */
+    --largura-conteudo: 1200px;
+    --raio: 16px;
+
+    /* SOMBRAS */
+    --sombra:
+        0 6px 18px rgba(0, 0, 0, 0.10);
+
+    --sombra-hover:
+        0 12px 28px rgba(0, 0, 0, 0.16);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: var(--tamanho-fonte);
+
+    line-height: 1.7;
+
+    color: var(--preto);
+
+    background-color: var(--branco);
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   PULAR PARA CONTEÚDO
+========================================================= */
+
+.pular-conteudo {
+    position: absolute;
+
+    top: -100px;
+    left: 20px;
+
+    z-index: 9999;
+
+    padding: 12px 20px;
+
+    background: var(--preto);
+    color: var(--branco);
+
+    border-radius: 0 0 8px 8px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.pular-conteudo:focus {
+    top: 0;
+}
+
+
+/* =========================================================
+   FOCO VISÍVEL
+========================================================= */
+
+a:focus-visible,
+button:focus-visible {
+
+    outline: 4px solid var(--foco);
+
+    outline-offset: 4px;
+
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.cabecalho-projeto {
+
+    min-height: 420px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(23, 63, 95, 0.35),
+            rgba(31, 111, 103, 0.92)
+        ),
+        url("../../img/capa-2ano-tri1.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: var(--branco);
+
+}
+
+
+.cabecalho-projeto .overlay {
+
+    width: 100%;
+
+    max-width: var(--largura-conteudo);
+
+    margin: 0 auto;
+
+    padding: 65px 30px;
+
+}
+
+
+/* =========================================================
+   LOGOS DO CABEÇALHO
+========================================================= */
+
+.topo-institucional {
+
+    display: grid;
+
+    grid-template-columns:
+        120px
+        1fr
+        120px;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+.logo-cabecalho {
+
+    width: 100%;
+
+    max-width: 110px;
+
+    height: auto;
+
+    object-fit: contain;
+
+}
+
+
+.titulo-cabecalho {
+
+    text-align: center;
+
+}
+
+
+.titulo-cabecalho h1 {
+
+    margin:
+        15px 0
+        10px 0;
+
+    font-size:
+        clamp(
+            2.1rem,
+            5vw,
+            4.2rem
+        );
+
+    line-height: 1.05;
+
+}
+
+
+.titulo-cabecalho p {
+
+    margin: 0 auto;
+
+    max-width: 700px;
+
+    font-size: 1.2rem;
+
+}
+
+
+/* =========================================================
+   TAG
+========================================================= */
+
+.tag-projeto {
+
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.60);
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(5px);
+
+    font-size: 0.9rem;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu-projeto {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    padding: 12px 20px;
+
+    background:
+        var(--colegio-primaria);
+
+    box-shadow:
+        0 3px 10px
+        rgba(0,0,0,0.15);
+
+}
+
+
+.menu-projeto a {
+
+    padding: 9px 15px;
+
+    color: var(--branco);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+
+}
+
+
+.menu-projeto a:hover {
+
+    background:
+        rgba(255,255,255,0.15);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   BARRA DE ACESSIBILIDADE
+========================================================= */
+
+.barra-acessibilidade {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    padding: 13px 20px;
+
+    background:
+        var(--cinza-claro);
+
+    border-bottom:
+        1px solid
+        var(--cinza-borda);
+
+}
+
+
+.barra-acessibilidade > span {
+
+    margin-right: 8px;
+
+    color:
+        var(--colegio-primaria);
+
+    font-weight: bold;
+
+}
+
+
+.barra-acessibilidade button {
+
+    padding: 8px 12px;
+
+    border:
+        1px solid
+        var(--cinza-borda);
+
+    border-radius: 7px;
+
+    background:
+        var(--branco);
+
+    color:
+        var(--preto);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.barra-acessibilidade button:hover {
+
+    background:
+        var(--projeto-claro);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+.secao-projeto {
+
+    max-width:
+        var(--largura-conteudo);
+
+    margin:
+        0 auto;
+
+    padding:
+        75px 30px;
+
+}
+
+
+.secao-projeto > h2 {
+
+    margin:
+        5px 0
+        25px 0;
+
+    color:
+        var(--colegio-primaria);
+
+    font-size:
+        clamp(
+            1.8rem,
+            4vw,
+            2.8rem
+        );
+
+    line-height: 1.15;
+
+}
+
+
+.secao-projeto > p {
+
+    max-width: 900px;
+
+    color:
+        var(--cinza-texto);
+
+    font-size: 1.05rem;
+
+}
+
+
+.subtitulo {
+
+    color:
+        var(--projeto-principal);
+
+    font-size: 0.9rem;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+/* =========================================================
+   SEÇÃO DESTACADA
+========================================================= */
+
+.secao-projeto.destaque {
+
+    max-width: none;
+
+    background:
+        var(--projeto-claro);
+
+    padding-left:
+        max(
+            30px,
+            calc(
+                (100% - var(--largura-conteudo))
+                / 2
+            )
+        );
+
+    padding-right:
+        max(
+            30px,
+            calc(
+                (100% - var(--largura-conteudo))
+                / 2
+            )
+        );
+
+}
+
+
+/* =========================================================
+   GRADE DE CONCEITOS
+========================================================= */
+
+.grade-conceitos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 22px;
+
+    margin-top: 35px;
+
+}
+
+
+.grade-conceitos article {
+
+    padding: 28px;
+
+    background:
+        var(--branco);
+
+    border-radius:
+        var(--raio);
+
+    box-shadow:
+        var(--sombra);
+
+    border-top:
+        5px solid
+        var(--projeto-principal);
+
+    transition: 0.25s;
+
+}
+
+
+.grade-conceitos article:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--sombra-hover);
+
+}
+
+
+.grade-conceitos .icone {
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: 2.3rem;
+
+}
+
+
+.grade-conceitos h3 {
+
+    margin:
+        0 0
+        10px 0;
+
+    color:
+        var(--projeto-escuro);
+
+}
+
+
+.grade-conceitos p {
+
+    margin: 0;
+
+    color:
+        var(--cinza-texto);
+
+}
+
+
+/* =========================================================
+   GALERIA DOS ESTUDANTES
+========================================================= */
+
+.galeria {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 22px;
+
+    margin-top: 35px;
+
+}
+
+
+.galeria figure {
+
+    margin: 0;
+
+    overflow: hidden;
+
+    background:
+        var(--branco);
+
+    border-radius:
+        var(--raio);
+
+    box-shadow:
+        var(--sombra);
+
+}
+
+
+.galeria img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 330px;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.35s;
+
+}
+
+
+.galeria figure:hover img {
+
+    transform:
+        scale(1.03);
+
+}
+
+
+.galeria figcaption {
+
+    padding:
+        14px 18px;
+
+    color:
+        var(--cinza-texto);
+
+    font-size: 0.9rem;
+
+}
+
+
+/* =========================================================
+   GALERIA DOS CARTAZES
+========================================================= */
+
+.galeria-cartazes {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(230px, 1fr)
+        );
+
+    gap: 24px;
+
+    margin-top: 35px;
+
+}
+
+
+.galeria-cartazes figure {
+
+    margin: 0;
+
+    padding: 12px;
+
+    background:
+        var(--branco);
+
+    border-radius:
+        var(--raio);
+
+    box-shadow:
+        var(--sombra);
+
+    transition: 0.25s;
+
+}
+
+
+.galeria-cartazes figure:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--sombra-hover);
+
+}
+
+
+.galeria-cartazes img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 430px;
+
+    object-fit: contain;
+
+    background:
+        var(--cinza-claro);
+
+    border-radius: 10px;
+
+}
+
+
+.galeria-cartazes figcaption {
+
+    padding:
+        12px 5px
+        5px 5px;
+
+    text-align: center;
+
+    color:
+        var(--cinza-texto);
+
+    font-size: 0.9rem;
+
+}
+
+
+/* =========================================================
+   DESTAQUE FINAL / CITAÇÃO
+========================================================= */
+
+blockquote {
+
+    max-width: 800px;
+
+    margin:
+        40px 0
+        0 0;
+
+    padding:
+        25px 30px;
+
+    background:
+        var(--projeto-claro);
+
+    border-left:
+        6px solid
+        var(--projeto-principal);
+
+    border-radius:
+        0 12px 12px 0;
+
+    color:
+        var(--colegio-primaria);
+
+    font-size: 1.2rem;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   VOLTAR
+========================================================= */
+
+.voltar-projetos {
+
+    max-width:
+        var(--largura-conteudo);
+
+    margin:
+        0 auto;
+
+    padding:
+        10px 30px
+        70px 30px;
+
+}
+
+
+.voltar-projetos a {
+
+    display: inline-block;
+
+    padding: 13px 22px;
+
+    background:
+        var(--colegio-primaria);
+
+    color:
+        var(--branco);
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+
+}
+
+
+.voltar-projetos a:hover {
+
+    background:
+        var(--projeto-principal);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+.rodape-principal {
+
+    background:
+        var(--colegio-primaria);
+
+    color:
+        var(--branco);
+
+    padding:
+        14px 25px;
+
+}
+
+
+.rodape-conteudo {
+
+    max-width:
+        var(--largura-conteudo);
+
+    margin:
+        0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+.rodape-info,
+.rodape-organizacao {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+}
+
+
+.rodape-info strong,
+.rodape-organizacao strong {
+
+    font-size: 0.9rem;
+
+}
+
+
+.rodape-info span,
+.rodape-organizacao span,
+.rodape-final span {
+
+    font-size: 0.78rem;
+
+    opacity: 0.85;
+
+}
+
+
+.rodape-final {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.logo-rodape {
+
+    width: 55px;
+
+    height: 55px;
+
+    object-fit: contain;
+
+}
+
+
+/* =========================================================
+   BOTÃO VOLTAR AO TOPO
+========================================================= */
+
+#voltar-topo {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    z-index: 1000;
+
+    width: 48px;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        var(--projeto-principal);
+
+    color:
+        var(--branco);
+
+    font-size: 1.4rem;
+
+    cursor: pointer;
+
+    box-shadow:
+        var(--sombra);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(15px);
+
+    transition: 0.25s;
+
+}
+
+
+#voltar-topo.mostrar {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+.animar-card {
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity 0.6s,
+        transform 0.6s;
+
+}
+
+
+.animar-card.visivel {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   ALTO CONTRASTE
+========================================================= */
+
+body.alto-contraste {
+
+    background:
+        #000000;
+
+    color:
+        #FFFFFF;
+
+}
+
+
+body.alto-contraste
+.secao-projeto,
+
+body.alto-contraste
+.secao-projeto.destaque {
+
+    background:
+        #000000;
+
+    color:
+        #FFFFFF;
+
+}
+
+
+body.alto-contraste
+.secao-projeto h2,
+
+body.alto-contraste
+.secao-projeto h3,
+
+body.alto-contraste
+.secao-projeto p,
+
+body.alto-contraste
+.subtitulo {
+
+    color:
+        #FFFFFF;
+
+}
+
+
+body.alto-contraste
+article,
+
+body.alto-contraste
+.galeria figure,
+
+body.alto-contraste
+.galeria-cartazes figure {
+
+    background:
+        #000000;
+
+    color:
+        #FFFFFF;
+
+    border:
+        2px solid
+        #FFFFFF;
+
+}
+
+
+body.alto-contraste
+a {
+
+    color:
+        #FFFF00;
+
+}
+
+
+/* =========================================================
+   ESPAÇAMENTO
+========================================================= */
+
+body.espacamento-acessivel {
+
+    letter-spacing:
+        0.08em;
+
+    word-spacing:
+        0.18em;
+
+    line-height:
+        2;
+
+}
+
+
+/* =========================================================
+   SEM CORES
+========================================================= */
+
+body.sem-cores {
+
+    filter:
+        grayscale(100%);
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .grade-conceitos {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .cabecalho-projeto {
+
+        min-height: 350px;
+
+    }
+
+
+    .topo-institucional {
+
+        grid-template-columns:
+            70px
+            1fr
+            70px;
+
+        gap: 10px;
+
+    }
+
+
+    .logo-cabecalho {
+
+        max-width: 65px;
+
+    }
+
+
+    .titulo-cabecalho h1 {
+
+        font-size: 1.8rem;
+
+    }
+
+
+    .titulo-cabecalho p {
+
+        font-size: 0.95rem;
+
+    }
+
+
+    .menu-projeto {
+
+        justify-content:
+            flex-start;
+
+        flex-wrap:
+            nowrap;
+
+        overflow-x:
+            auto;
+
+    }
+
+
+    .menu-projeto a {
+
+        flex-shrink:
+            0;
+
+    }
+
+
+    .barra-acessibilidade {
+
+        justify-content:
+            flex-start;
+
+    }
+
+
+    .secao-projeto {
+
+        padding:
+            55px 20px;
+
+    }
+
+
+    .secao-projeto.destaque {
+
+        padding-left:
+            20px;
+
+        padding-right:
+            20px;
+
+    }
+
+
+    .grade-conceitos {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .galeria {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .galeria img {
+
+        height:
+            260px;
+
+    }
+
+
+    .galeria-cartazes {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .galeria-cartazes img {
+
+        height:
+            auto;
+
+        max-height:
+            520px;
+
+    }
+
+
+    .rodape-conteudo {
+
+        grid-template-columns:
+            1fr
+            auto;
+
+    }
+
+
+    .rodape-organizacao {
+
+        display:
+            none;
+
+    }
+
+
+    .logo-rodape {
+
+        width:
+            45px;
+
+        height:
+            45px;
+
+    }
+
+}
